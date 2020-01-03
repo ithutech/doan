@@ -123,22 +123,30 @@ function yourlecturer_() {
 $(".yourlecturer").ready(function() {
   yourlecturer_();
 })
-
+$(".profileSV").ready(function() {
+  profileSV_();
+})
 function profileSV_(){
   if(getCoo56yhjkk() == undefined)
   return;
   var url = APIurl  + getCoo56yhjkk() + "&action=stprofile";
   var strOFI = '<div class="form-input validate-input" data-validate="';
   $.getJSON(url, function(data) {
-    var strText = '<div class="formtest"> <form class="form-view" onsubmit="return false;">';
+    var strText = '<div class="formtest"><div class="title"> <h2>Thông tin cá nhân sinh viên</h2> </div> <form class="form-view" onsubmit="return false;">';
     $.each(data, function(key, val) {
-      strText += strOFI+'Vui lòng nhập họ tên \"> <span class="label-input">Họ và tên:</span> <input class="input input_f disabled" type="text" value="'+val[0]["sv-mssv"]+'" placeholder="Nhập họ và tên" required> <span class="focus-input"></span> </div>';
-      strText += strOFI+'Nhập họ tên \"> <span class="label-input">Họ và tên:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["sv-hoten"]+'" placeholder="Nhập họ tên" required> <span class="focus-input"></span> </div>'  ;
-      strText += strOFI+'Số điện thoại là bắt buộc \"> <span class="label-input">Email:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["sv-email"]+'" placeholder="Nhập email" required> <span class="focus-input"></span> </div>';
-      strText += strOFI+'Số điện thoại là bắt buộc \"> <span class="label-input">Số điện thoại:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["sv-phone"]+'" placeholder="Nhập số điện thoại" required> <span class="focus-input"></span> </div>';
-      strText += strOFI+'Số điện thoại là bắt buộc \"> <span class="label-input">Ngày sinh:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["sv-birth"]+'" placeholder="Nhập ngày sinh" required> <span class="focus-input"></span> </div>';
-      strText += strOFI+'Số điện thoại là bắt buộc \"> <span class="label-input">Lớp:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["sv-lop"]+'" placeholder="Nhập số điện thoại" required> <span class="focus-input"></span> </div>';
-      strText += strOFI+'Nhập mật khẩu cũ \"> <span class="label-input">Nhập mật khẩu cũ:</span> <input class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu cũ" required> <span class="focus-input"></span> </div><div class="form-input validate-input" data-validate="Nhập mật khẩu mới"> <span class="label-input">Nhập mật khẩu mới:</span> <input class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới" required> <span class="focus-input"></span> </div><div class="form-input-absoluted"><input id="submitChangePWGV" type="submit" class="inputButton btn-left" value="ĐÔNG Ý THAY ĐỖI"><span id="submitChangeInf_Comp" class="inputButton btn-left" onclick="modelDetails();">CẬP NHẬT THÔNG TIN CÔNG TY HD THỰC TẬP</span> <div class="lg-oad loading-change  is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div> </div>';
+      strText += strOFI+'Vui lòng nhập họ tên \"> <span class="label-input">Mã số sinh viên:</span> <input class="input input_f disabled" type="text" value="'+val[0]["sv-mssv"]+'" placeholder="Mã số sinh viên"> <span class="focus-input"></span> </div>';
+      strText += strOFI+'Lớp đang học \"> <span class="label-input">Lớp:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["sv-lop"]+'" placeholder="Lớp"> <span class="focus-input"></span> </div>';
+      strText += strOFI+'Nhập họ tên \"> <span class="label-input">Họ và tên:</span> <input id="stName" class="input input_f " type="text" value="'+ val[0]["sv-hoten"]+'" placeholder="Nhập họ tên" required> <span class="focus-input"></span> </div>'  ;
+      strText += strOFI+'Email là bắt buộc \"> <span class="label-input">Email:</span> <input id="stEmail" class="input input_f " type="text" value="'+ val[0]["sv-email"]+'" placeholder="Nhập email" required> <span class="focus-input"></span> </div>';
+      strText += strOFI+'Số điện thoại là bắt buộc \"> <span class="label-input">Số điện thoại:</span> <input id="stPhone" class="input input_f " type="text" value="'+ val[0]["sv-phone"]+'" placeholder="Nhập số điện thoại" required> <span class="focus-input"></span> </div>';
+      strText += strOFI+'Nhập ngày sinh \"> <span class="label-input">Ngày sinh:</span> <input id="stBirth" class="input input_f " type="text" value="'+ val[0]["sv-birth"]+'" placeholder="Nhập ngày sinh" required> <span class="focus-input"></span> </div>';
+      strText += '<div class="form-input-absoluted"><input id="submitstChProfile" type="submit" class="inputButton btn-left" value="ĐÔNG Ý THAY ĐỖI"><span id="submitChangeInf_Comp" class="inputButton btn-left" onclick="modelDetails();">CẬP NHẬT THÔNG TIN CÔNG TY HD THỰC TẬP</span> <div class="lg-oad loading-change-profile is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div></form>';
+      // With title hightlight
+      strText += '<div class="title"> <h2>thay đổi mật khẩu</h2> </div>';
+      // Change password form for student
+
+      strText += '<form class="form-view" onsubmit="return false;">';
+      strText += strOFI+'Nhập mật khẩu cũ \"> <span class="label-input">Nhập mật khẩu cũ:</span> <input id="oldPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu cũ" required> <span class="focus-input"></span> </div><div class="form-input validate-input" data-validate="Nhập mật khẩu mới"> <span class="label-input">Nhập mật khẩu mới:</span> <input id="newPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới" required> <span class="focus-input"></span> </div><div class="form-input-absoluted"><input id="submitChangePW" type="submit" class="inputButton btn-left" value="ĐÔNG Ý THAY ĐỖI MẬT KHẨU"> <div class="lg-oad loading-change is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div> </div></div class="script_tab_sv"><script src="./assets/js/tab_profile.js"></script></div>';
 
     });
     strText += '</form></div>';
@@ -146,9 +154,7 @@ function profileSV_(){
 
   });
 }
-$(".profileSV").ready(function() {
-  profileSV_();
-})
+
 function modelDetails(){
   $(".modelDetails").css("display","block");
   if($('.infoCompanySV').html() == "" || $('.modelDetails').hasClass('infoCompanySV') == undefined)
@@ -232,11 +238,11 @@ function studentViewRp_() {
     $.each(data.lookup, function(key, val) {
 
       var mdContent = "<div id='sheetsW1' class='title'>Tuần 1: val.timeW1 </div> \n\n";
-mdContent += val.vrp_1 + "\n\n";
-mdContent += "<div id='sheetsW2' class='title'>Tuần 2: val.timeW2 </div> \n\n";
-mdContent += val.vrp_2 + "\n\n";
-mdContent += "<div id='sheetsW3' class='title'>Tuần 3: val.timeW3 </div> \n\n";
-mdContent += val.vrp_3 + "\n\n";
+        mdContent += val.vrp_1 + "\n\n";
+        mdContent += "<div id='sheetsW2' class='title'>Tuần 2: val.timeW2 </div> \n\n";
+        mdContent += val.vrp_2 + "\n\n";
+        mdContent += "<div id='sheetsW3' class='title'>Tuần 3: val.timeW3 </div> \n\n";
+        mdContent += val.vrp_3 + "\n\n";
       var editor = tui.Editor.factory({
         // result +=  + val.vrp_1;
         // result += '<h1>Tuần 2: </h1>' + val.vrp_2;

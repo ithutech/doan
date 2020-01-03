@@ -123,12 +123,17 @@ function profile_(){
   var url = APIurl  + getCoo56yhjkk() + "&action=ltprofile";
 
   $.getJSON(url, function(data) {
-    var strText = '<div class="formtest"> <form class="form-view">';
+    var strText = '<div class="formtest">';
     $.each(data, function(key, val) {
+      strText += '<div class="title"> <h2>thông tin cá nhân giảng viên</h2> </div>';
+      strText += '<form class="form-view" onsubmit="return false;">'
       strText += '<div class="form-input validate-input" data-validate="Vui lòng nhập họ tên"> <span class="label-input">Họ và tên:</span> <input class="input input_f disabled" type="text" value="'+val[0]["gv-hoten"]+'" placeholder="Nhập họ và tên"> <span class="focus-input"></span> </div>';
       strText += '<div class="form-input validate-input" data-validate="Nhập đúng định dạng email"> <span class="label-input">Email:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["gv-email"]+'" placeholder="Nhập email"> <span class="focus-input"></span> </div>'  ;
-      strText += '<div class="form-input validate-input" data-validate="Số điện thoại là bắt buộc"> <span class="label-input">Số điện thoại:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["gv-phone"]+'" placeholder="Nhập số điện thoại"> <span class="focus-input"></span> </div>';
-      strText += '<div class="form-input validate-input" data-validate="Nhập mật khẩu cũ"> <span class="label-input">Nhập mật khẩu cũ:</span> <input class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu cũ"> <span class="focus-input"></span> </div><div class="form-input validate-input" data-validate="Nhập mật khẩu mới"> <span class="label-input">Nhập mật khẩu mới:</span> <input class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới"> <span class="focus-input"></span> </div><div class="form-input-absoluted"><input id="submitChangePWGV" type="submit" class="inputButton" value="ĐÔNG Ý THAY ĐỖI"> <div class="lg-oad loading-change  is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div>';
+      strText += '<div class="form-input validate-input" data-validate="Số điện thoại là bắt buộc"> <span class="label-input">Số điện thoại:</span> <input class="input input_f disabled" type="text" value="'+ val[0]["gv-phone"]+'" placeholder="Nhập số điện thoại"> <span class="focus-input"></span> </div></form>';
+
+      // Change password form
+      strText += '<form class="form-view top-10px" onsubmit="return false;">';
+      strText += '<div class="form-input validate-input" data-validate="Nhập mật khẩu cũ"> <span class="label-input">Nhập mật khẩu cũ:</span> <input id="oldPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu cũ"> <span class="focus-input"></span> </div><div class="form-input validate-input" data-validate="Nhập mật khẩu mới"> <span class="label-input">Nhập mật khẩu mới:</span> <input id="newPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới"> <span class="focus-input"></span> </div><div class="form-input-absoluted"><input id="submitChangePW" type="submit" class="inputButton btn-left" value="ĐÔNG Ý THAY ĐỖI MẬT KHẨU"> <div class="lg-oad loading-change  is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div></div class="script_tab_sv"><script src="./assets/js/tab_profile.js"></script></div>';
 
     });
     strText += '</form></div>';
