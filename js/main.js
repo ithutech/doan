@@ -13,7 +13,7 @@ $("#submitLogin").click(function(event) {
       if(!HASH) log_fail();
       else{
         setCoo456ysahjkie(HASH, 1);
-        window.location.href = '/doan2019';
+        window.location = '/';
         $("#login").css({'display':'none  ', 'opacity':'0'});
         document.querySelector(".input-group .loading").classList.add("is-hidden");
 
@@ -63,7 +63,4 @@ $("span#logout").click(function() {
   logout();
   document.querySelector(".login.active").classList.remove("is-hidden");
   location.reload(true);
-})
-$(".profileSV").ready(function() {
-  profileSV_();
 })
