@@ -1,0 +1,88 @@
+
+.ih.columns ul.tab-login {
+    list-style: none;
+    text-align: center;
+    /* border-left: 2px solid #0176c0; */
+    min-height: 43.85px;
+    /* height: 44.09px; */
+    
+}
+
+.ih.columns ul.tab-login li {
+    display: inline;
+}
+/* .ih.columns ul.tab-login li:nth-child(1){margin-left: 5px} */
+
+/* .ih.columns ul.tab-login li:first-child{margin-left: 8px} */
+.ih.columns ul.tab-login li:nth-child(2){margin-left: -4px}
+.ih.columns ul.tab-login li a.button {
+    background-color: white;
+    margin-bottom: -1px;
+    min-width: 130px;
+    width: 50%;
+}
+
+.ih.columns ul.tab-login li a.active.button {
+  color: white;
+  background-color: #0176c0;
+}
+
+.ih.columns .tab-content-login .tab-access-login {
+    display: none;
+}
+
+.ih.columns .tab-content-login .tab-access-login.active {
+    display: block;
+}
+
+.button {
+  display: inline-block;
+      padding: 1.05px 30px;
+      color: black;
+      text-align: center;
+      font-size: 13px;
+      line-height: 38px;
+      text-decoration: none;
+      background-color: #0176c0;
+      border: 2px solid #0176c0;
+      cursor: pointer;
+      box-sizing: border-box;
+}
+
+/* divTable */
+.divTable {
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.divTable .divTitle {
+	display: table-caption;
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+}
+.divTable .divHeading {
+	display: table-row;
+	font-weight: bold;
+	border-bottom-width: 2px;
+}
+.divTable .divHeading .cell_ith {
+	border-bottom-width: 2px;
+}
+.divTable .row_ith {
+	display: table-row;
+}
+.divTable .row_ith:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.divTable .row_ith:hover {
+	background-color: #f5f5f5;
+	cursor: default
+}
+.divTable .cell_ith {
+    display: table-cell;
+    border: 1px solid #f7f7f7;
+    border-width: thin;
+    padding: 8px;
+    font-size: 12px;
+}
