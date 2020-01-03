@@ -554,12 +554,16 @@ input.inputChange {
     border: none;
     border-bottom: 1px solid lightgrey;
 } */
-.lg-oad.loading-change {
+/* .lg-oad.loading-change {
     position: relative;
     top: -40px;
     left: 180px;
+} */
+.lg-oad.loading-change, .lg-oad.loading-change-profile {
+    float: left;
+    margin-left: 10px;
+    margin-top: 3px;
 }
-
 
 .input-group label {
   top: -20px;
@@ -616,17 +620,24 @@ input.input_f::-moz-placeholder {
   border-bottom: 1px solid #b2b2b2;
   margin-bottom: 26px;
 }
-
+.profileSV .title, .profileGV .title {
+    margin-top: 30px;
+    margin-bottom: -30px;
+}
+form.form-view.top-10px {
+    margin-top: -15px;
+    padding-top: 0;
+}
 .label-input {
     font-family: Poppins-Regular;
     font-size: 15px;
     color: gray;
     line-height: 1.2;
-    text-align: right;
+    text-align: left;
     position: absolute;
     top: 14px;
-    left: -134px;
-    width: 127px;
+    left: -119px;
+    width: 110px;
 }
 .input.input_f {
   font-family: Poppins-Regular;
