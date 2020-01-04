@@ -461,14 +461,14 @@ li.nav-links.login.ope-log.active_l0G {
 }
 
 /* Model popup */
-.modelDetails {
+.modelDetails,.modelAlert  {
   display: none;
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 100px;
+  /* padding-top: 100px; */
   /* Location of the box */
   left: 0;
   top: 0;
@@ -483,17 +483,26 @@ li.nav-links.login.ope-log.active_l0G {
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
 }
-
+.modelAlert {
+    background-color: rgb(255, 255, 255);
+}
 /* Modal Content */
-.modelDetails-content {
+.modelDetails-content, .modelAlert-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 960px;
   height: initial;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  border-radius: 10px;
 }
-
+.modelAlert-content.modelAlert {
+    width: 500px;
+    height: 300px;
+}
 /* The Close Button */
 .modelDetails-close {
   margin-top: -10px;
@@ -881,9 +890,8 @@ a.read-more {
     background-color: white;
     box-shadow: 2px 2px 7px #81bdd1cf;
 }
-.info-no.left-f.new-update{  
-	min-height: 260px;
-  max-height: 260px;}
+.info-no.left-f.new-update{     min-height: 260px;
+    max-height: 260px;}
 h2.title-introduc {
     text-transform: uppercase;
     text-align: center;
@@ -895,10 +903,10 @@ ul.ul-news {
 }
 
 article.introduc, article.product-review {
-        overflow: auto;
-    padding: 20px 0 20px 20px;
-    max-height: 300px;
-	min-height: 300px;
+  overflow: auto;
+  padding: 20px 0 20px 20px;
+  max-height: 300px;
+  min-height: 300px;
 }article.introduc p {
     text-align: justify;
 }
@@ -940,4 +948,22 @@ select.input.input_f.select_mon_hoc {
 .lg-oad.loading-register-topic {
     float: right;
     margin: 2px 0 0 10px;
+}
+.gap-top50px{
+  clear: both;
+  margin-top: 50px;
+}.gap-top30px{
+  clear: both;
+  margin-top: 30px;
+}.btn-radius7-50 {
+    border-radius: 10px;
+    width: 50%;
+}
+.content-alert {
+    text-align: justify;
+    padding: 20px 0;
+    margin-bottom: 50px;
+}
+.modelAlert{
+  display: block;
 }
