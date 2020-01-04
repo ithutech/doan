@@ -5,15 +5,16 @@ $("#submitLogin").click(function(event) {
     document.querySelector(".input-group .loading").classList.remove("is-hidden");
 
   var url = APIurl +"access_log=" + get_access_log() + "&action=overview";
-  var HASH;
+  var HASH,alert;
   $.getJSON(url, function(data) {
       $.each(data.auth, function(key, val) {
-        HASH = val.result;
+        HASH = val.result;alert = val.alert;
       });
       if(!HASH) log_fail();
       else{
         setCoo456ysahjkie(HASH, 1);
-        window.location = '/doan';
+        requestAlert(alert ,1);
+        window.location = '/';
         $("#login").css({'display':'none  ', 'opacity':'0'});
         document.querySelector(".input-group .loading").classList.add("is-hidden");
 
@@ -31,6 +32,7 @@ $("#main-load").ready(function() {
     $.each(data.data, function(key, val) {
       strText += val.overview;
       REsult = val.result;
+
     });
     if(REsult){
       document.querySelector(".login.active").classList.remove("is-hidden");
@@ -38,6 +40,9 @@ $("#main-load").ready(function() {
       document.querySelector(".ope-log").classList.add("active_l0G");
       $("span#profile").html("Xin Chào! Chúc bạn một ngày học tập và làm việc vui vẽ ");
       result();
+      if (getCo82nckie_alert() == "true") {
+        $('body').append('<div id="modelAlert"> <div class="modelAlert "> <div class="modelAlert-content modelAlert"> <div class="modelAlertST"> <div class="row-12"> <div class="row-center"><h2 style="margin-bottom: 10px">THÔNG BÁO CẬP NHẬT THÔNG TIN </h2> <h2 style="color:red; font-weight:bold; text-decoration:none">THAY ĐỔI MẬT KHẨU CHO LẦN ĐĂNG NHẬP LẦN ĐẦU</h2> </div> <div class="content-alert"> <p>Sinh viên tiến hành vào danh mục "<strong>Thông tin cá nhân</strong>" để tiến hành thay đổi mật khẩu cá nhân</p> <p>Sinh viên tiến hành đăng ký đề tài đồ án, và thực hiện đúng nhiệm vụ của mình </p> <p style="float:right" class="gap-top50px">Thân! ITHUTECH</p></div> </div> <div class="row-12"> <div class="form-input-absoluted gap-top50px"> <input type="submit" class="inputButton btn-center btn-radius7-50" value="TÔI ĐÃ HIỂU" onclick="understand_alert();"><script><script> </div> </div> </div> </div> </div> </div>');
+      }
     }
     if(!REsult){
       document.querySelector(".loader").classList.add("is-hidden");
