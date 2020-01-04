@@ -51,6 +51,8 @@ $('nav a').click(function(e) {
     $('.rightbox').children().not('.studentGuide').addClass('noshow');
     if($('.yourlecturer').html() == "" || $('.yourlecturer').hasClass('formtest') == undefined)
     {
+            var jsLoading = '<form class="form-view full-width"><div class="form-input box-loading">  <input class="text input input_f disabled" type="text">  </div><div class="form-input box-loading">  <input class="input input_f disabled" type="text">  </div> <div class="form-input box-loading">  <input class="input input_f disabled" type="text">  </div><div class="box-loading">  <input class="input input_f disabled box-loading" type="text">  </div><div class="box-loading">  <input class="input input_f" type="text">  </div><div class="box-loading">  <input class="input input_f" type="text">  </div><div class="form-input-absoluted box-loading"></div> </form>';
+
       $('.yourlecturer').append(jsLoading);
       yourlecturer_();
     }
@@ -58,10 +60,6 @@ $('nav a').click(function(e) {
   else if(this.id === 'studentRegister') {
     $('.studentRegister').removeClass('noshow');
     $('.rightbox').children().not('.studentRegister').addClass('noshow');
-    if($('.registerTOPIC').html() == "" )
-    {
-      $('.registerTOPIC').append(jsLoading);
-    }
   }
 });
 
