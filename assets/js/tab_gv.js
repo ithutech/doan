@@ -158,7 +158,7 @@ function topicManager_(){
   var url = APIurl  + getCoo56yhjkk() + "&action=lt_view_topic";
 
   $.getJSON(url, function(data) {
-    var strText = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith">Thời gian đăng ký</div> <div class="cell_ith">MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith">Tên đề tài</div> <div class="cell_ith">Mô tả đề tài</div> <div class="cell_ith">Tên môn học </div><div class="cell_ith">Kiểm duyệt </div></div>';
+    var strText = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith">Thời gian đăng ký</div> <div class="cell_ith">MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith">Tên đề tài</div> <div class="cell_ith">Mô tả đề tài</div> <div class="cell_ith">Tên môn học </div></div>';
     $.each(data.lookup, function(key, val) {
       strText += '<div class="row_ith">'+ '<div class="cell_ith">'+ val["time-reg"] + '</div>';
       strText += '<div class="cell_ith">' +val["sv-masv"] + '</div>';
@@ -168,7 +168,8 @@ function topicManager_(){
       strText += '<div class="cell_ith">' +val["mota-detai"] + '</div>';
       strText += '<div class="cell_ith">' +val["ten-monhoc"] + '</div>';
 
-      strText += '<div class="cell_ith">'+ '<div class="topic_approval"><button class="btn-hutech more" onclick="viewrp('+val["sv-masv"]+')"><i class="fas fa-check"><span>&nbsp;DUYỆT</span></i></button>'  + "</div></div></div>";
+//       strText += '<div class="cell_ith">'+ '<div class="topic_approval"><button class="btn-hutech more" onclick="viewrp('+val["sv-masv"]+')"><i class="fas fa-check"><span>&nbsp;DUYỆT</span></i></button>'  + "</div></div></div>";
+      strText += '</div>";
 
     });
     strText += "</div>";
