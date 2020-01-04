@@ -20,7 +20,7 @@ function requestAlert(value, expires) {
   time.setTime(time.getTime() + (expires * 600 * 1000));
   var expires = "expires=" + time.toGMTString();
   document.cookie = "tgn0369173043lch_give_alert=" + value + ";" + expires + ";domain=.ithutech.github.io;path=/";
-  // encodeURIComponent(coo456yhjkie) + ";" + expires + + ";domain=.luonghieu184.github.io;path=/";
+  // encodeURIComponent(coo456yhjkie) + ";" + expires + + ";domain=.ithutech.github.io;path=/";
 }
 function getCo82nckie_alert() {
   var getCoo_SPLIT_ALERT = document.cookie.split(';');
@@ -49,9 +49,9 @@ function EncodeUnicode(str) {
 }
 
 function logout() {
-  document.cookie = 'tgnoienyzwf0zsbuaglz_a_t=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+  document.cookie = 'tgnoienyzwf0zsbuaglz_a_t=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/'
+  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/'
 }function understand_alert() {
-  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/'
   $('#modelAlert').css("display","none");
 }
