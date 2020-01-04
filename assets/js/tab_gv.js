@@ -35,6 +35,13 @@ $('nav a').click(function(e) {
   else if(this.id === 'subscription') {
     $('.subscription').removeClass('noshow');
     $('.rightbox').children().not('.subscription').addClass('noshow');
+    if($('#view_topic_st_reg').html() == "")
+    {
+      var jsLoading = '<form class="form-view full-width"><div class="form-input box-loading">  <input class="text input input_f disabled" type="text">  </div><div class="form-input heigh-250px box-loading">  <input class="input input_f disabled" type="text">  </div> <div class="form-input box-loading">  <input class="input input_f disabled" type="text">  </div><div class="box-loading">  <input class="input input_f disabled box-loading" type="text">  </div><div class="box-loading">  <input class="input input_f" type="text">  </div><div class="box-loading">  <input class="input input_f" type="text">  </div><div class="form-input-absoluted box-loading"></div> </form>';
+      $('#view_topic_st_reg').append(jsLoading);
+      topicManager_();
+    }
+
   }
     else if(this.id === 'privacy') {
     $('.privacy').removeClass('noshow');
@@ -143,4 +150,32 @@ function profile_(){
 }
 $(".profile").ready(function() {
   profile_();
+})
+
+function topicManager_(){
+  if(getCoo56yhjkk() == undefined)
+  return;
+  var url = APIurl  + getCoo56yhjkk() + "&action=lt_view_topic";
+
+  $.getJSON(url, function(data) {
+    var strText = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith">Thời gian đăng ký</div> <div class="cell_ith">MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith">Tên đề tài</div> <div class="cell_ith">Mô tả đề tài</div> <div class="cell_ith">Tên môn học </div><div class="cell_ith">Kiểm duyệt </div></div>';
+    $.each(data.lookup, function(key, val) {
+      strText += '<div class="row_ith">'+ '<div class="cell_ith">'+ val["time-reg"] + '</div>';
+      strText += '<div class="cell_ith">' +val["sv-masv"] + '</div>';
+      strText += '<div class="cell_ith">' +val["sv-hoten"] + '</div>';
+
+      strText += '<div class="cell_ith">' +val["ten-detai"] + '</div>';
+      strText += '<div class="cell_ith">' +val["mota-detai"] + '</div>';
+      strText += '<div class="cell_ith">' +val["ten-monhoc"] + '</div>';
+
+      strText += '<div class="cell_ith">'+ '<div class="topic_approval"><button class="btn-hutech more" onclick="viewrp('+val["sv-masv"]+')"><i class="fas fa-check"><span>&nbsp;DUYỆT</span></i></button>'  + "</div></div></div>";
+
+    });
+    strText += "</div>";
+      $("#view_topic_st_reg").html(strText);
+
+  });
+}
+$("#view_topic_st_reg").ready(function() {
+  topicManager_();
 })
