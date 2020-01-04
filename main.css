@@ -967,3 +967,11 @@ select.input.input_f.select_mon_hoc {
 .modelAlert{
   display: block;
 }
+.topic_approval {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0c600f;
+    position: relative;
+    transform: translateY(50%);
+}
