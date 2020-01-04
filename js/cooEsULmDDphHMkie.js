@@ -12,13 +12,24 @@ function setCoo456ysahjkie(value, expires) {
   var time = new Date();
   time.setTime(time.getTime() + (expires * 60 * 12 * 60 * 1000));
   var expires = "expires=" + time.toGMTString();
-  document.cookie = "tgnoienyzwf0zsbuaglz_a_t=" + encodeURIComponent(coo456yhjkie) + ";" + expires + + ";domain=.ithutech.github.io;path=/";
+  document.cookie = "tgnoienyzwf0zsbuaglz_a_t=" + encodeURIComponent(coo456yhjkie) + ";" + expires + ";domain=.ithutech.github.io;path=/";
 }
 
-function getCo82nckie() {
-  return document.cookie;
+function requestAlert(value, expires) {
+  var time = new Date();
+  time.setTime(time.getTime() + (expires * 600 * 1000));
+  var expires = "expires=" + time.toGMTString();
+  document.cookie = "tgn0369173043lch_give_alert=" + value + ";" + expires + ";domain=.ithutech.github.io;path=/";
+  // encodeURIComponent(coo456yhjkie) + ";" + expires + + ";domain=.luonghieu184.github.io;path=/";
 }
-
+function getCo82nckie_alert() {
+  var getCoo_SPLIT_ALERT = document.cookie.split(';');
+  for( var i = 0; i < getCoo_SPLIT_ALERT.length; i++)
+  {
+    if(getCoo_SPLIT_ALERT[i].match(/tgn0369173043lch_give_alert=/g))
+      return getCoo_SPLIT_ALERT[i].replace(/ /g, '').split('=')[1];
+  }
+}
 function getCoo56yhjkk() {
   var getCoo_SPLIT = document.cookie.split(';');
   for( var i = 0; i < getCoo_SPLIT.length; i++)
@@ -39,4 +50,8 @@ function EncodeUnicode(str) {
 
 function logout() {
   document.cookie = 'tgnoienyzwf0zsbuaglz_a_t=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+}function understand_alert() {
+  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+  $('#modelAlert').css("display","none");
 }
