@@ -169,7 +169,7 @@ function topicManager_(){
       strText += '<div class="cell_ith">' +val["ten-monhoc"] + '</div>';
 
 //       strText += '<div class="cell_ith">'+ '<div class="topic_approval"><button class="btn-hutech more" onclick="viewrp('+val["sv-masv"]+')"><i class="fas fa-check"><span>&nbsp;DUYỆT</span></i></button>'  + "</div></div></div>";
-      strText += '</div>";
+      strText += '</div>';
 
     });
     strText += "</div>";
