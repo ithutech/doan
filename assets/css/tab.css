@@ -151,7 +151,7 @@ p.none-select{
     display: table;
     position: relative;
     width: 100%;
-    background-color: #5ab258;
+/*     background-color: #5ab258; */
     color: #fff;
     transition: all 0.2s ease;
 }
@@ -173,12 +173,14 @@ p.none-select{
 	 background-color: #2ecc40;
 }
  .Message-icon {
-	 display: table-cell;
-	 vertical-align: middle;
-	 width: 60px;
-	 padding: 30px;
-	 text-align: center;
-	 background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 3px 10px rgba(102, 222, 97, 0.85);
+    display: table-cell;
+    border-radius: 10px;
+    vertical-align: middle;
+    width: 60px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(46, 189, 40, 0.85);
 }
  .Message-icon > i {
 	 width: 20px;
@@ -188,7 +190,7 @@ p.none-select{
        max-width: 660px;
 	 display: table-cell;
 	 vertical-align: middle;
-	 padding: 30px 20px 30px 10px;
+	 padding: 0 20px 0 10px;
 }
  .Message-body > p {
 	 line-height: 1.2;
