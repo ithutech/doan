@@ -975,3 +975,8 @@ select.input.input_f.select_mon_hoc {
     position: relative;
     transform: translateY(50%);
 }
+
+div#content_news li {
+    background: transparent url(//www.hutech.edu.vn/images/bullet1.gif) no-repeat scroll 0 8px;
+    padding: 0 0 0 14px;
+}
