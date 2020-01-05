@@ -187,6 +187,7 @@ p.none-select{
 	 font-size: 20px;
 }
  .Message-body {
+	 color:black;
        max-width: 660px;
 	 display: table-cell;
 	 vertical-align: middle;
