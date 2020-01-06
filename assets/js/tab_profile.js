@@ -12,7 +12,7 @@ $("#submitstChProfile").click(function(event) {
     $.each(data.output, function(key, val) {
       strResult = val.result;
     });
-    document.querySelector(".form-input-absoluted .loading-change").classList.add("is-hidden");
+    document.querySelector(".form-input-absoluted .loading-change-profile").classList.add("is-hidden");
     alert(strResult);
   });
 })
