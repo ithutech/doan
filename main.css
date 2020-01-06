@@ -24,7 +24,7 @@ ul {
   padding: 0
 }
 
-ul li {
+ul li.nav-links {
   text-transform: uppercase;
 }
 
