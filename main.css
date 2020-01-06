@@ -793,7 +793,7 @@ form.form-view.full-width {
 .form-input.heigh-250px.box-loading {
     height: 250px;
 }
-.yourlecturer,.profileSV {
+.yourlecturer,.profileSV, #view_topic_st_reg, .studentAll {
     margin-top: 15px;
 }
 span#submitChangeInf_Comp {
