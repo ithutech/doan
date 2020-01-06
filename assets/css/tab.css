@@ -173,18 +173,29 @@ p.none-select{
 	 background-color: #2ecc40;
 }
  .Message-icon {
-    box-shadow: 3px 3px 10px rgba(102, 222, 97, 0.85);
     display: table-cell;
-    border-radius: 10px;
     vertical-align: middle;
+    padding: 0 25px;
+    border-right: 1px solid #8080808f;
+}
+.Message-light {
+    color: #063b7b;
+    padding: 5px;
     width: 60px;
-    padding: 30px;
+    height: 60px;
     text-align: center;
-    background-color: rgba(46, 189, 40, 0.85);
+    border: 1px dotted grey;
+    border-radius: 50%;
 }
  .Message-icon > i {
 	 width: 20px;
 	 font-size: 20px;
+}
+.Message-light i {
+    font-size: 22px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
  .Message-body {
 	 color:black;
