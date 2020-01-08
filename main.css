@@ -946,6 +946,8 @@ font-family: "Font Awesome 5 Free";
     float: right;
     bottom: -1px;
     font-weight: 900;
+}.view-content {
+    word-break: break-all;
 }
 select.input.input_f.select_mon_hoc {
     border: none;
