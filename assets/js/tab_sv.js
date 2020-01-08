@@ -235,25 +235,21 @@ function studentViewRp_() {
 
   $.getJSON(url, function(data) {
     // var result = "";
+    var mdContent= "", strView = "<div class='view-content view-content-";
     $.each(data.lookup, function(key, val) {
-
-      var mdContent = "<div id='sheetsW1' class='title'>Tuần 1: val.timeW1 </div> \n\n";
-        mdContent += val.vrp_1 + "\n\n";
-        mdContent += "<div id='sheetsW2' class='title'>Tuần 2: val.timeW2 </div> \n\n";
-        mdContent += val.vrp_2 + "\n\n";
-        mdContent += "<div id='sheetsW3' class='title'>Tuần 3: val.timeW3 </div> \n\n";
-        mdContent += val.vrp_3 + "\n\n";
-      var editor = tui.Editor.factory({
-        // result +=  + val.vrp_1;
-        // result += '<h1>Tuần 2: </h1>' + val.vrp_2;
-        // result += '<h1>Tuần 3: </h1>' + val.vrp_3;
-          el: document.querySelector('#viewerSection'),
-          viewer: true,
-          height: '500px',
-          initialValue:mdContent,
-      });
+      for(var i = 1; i <= val.sotuan; i++)
+      {
+        var vrp = "vrp_"+i+"";
+        mdContent += "<div id='sheetsW"+i+"'><div class='title'>Tuần "+i+": val.timeW1 </div> \n\n";
+        mdContent  += strView+i+"'>" + val[vrp] + "\n\n" + "</div></div>";
+      }
     });
-
+    var editor = tui.Editor.factory({
+        el: document.querySelector('#viewerSection'),
+        viewer: true,
+        height: '500px',
+        initialValue:mdContent
+    });
   });
 
 }
