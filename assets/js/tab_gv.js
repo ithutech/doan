@@ -105,7 +105,6 @@ function studentManager_() {
 
   $.getJSON(url, function(data) {
     var strText = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith"> MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith"> Email </div> <div class="cell_ith"> Số điện thoại </div> <div class="cell_ith"> Ngày sinh </div> <div class="cell_ith"> Mã lớp </div> <div class="cell_ith"> Tên môn học </div> <div class="cell_ith"> Báo Cáo </div> </div>';
-    var total_student;
     $.each(data.lookup, function(key, val) {
       strText += '<div class="row_ith">'+ '<div class="cell_ith">'+ val["sv-masv"] + '</div>';
       strText += '<div class="cell_ith">' +val["sv-hoten"] + '</div>';
@@ -115,11 +114,10 @@ function studentManager_() {
       strText += '<div class="cell_ith">' +val["sv-malop"] + '</div>';
       strText += '<div class="cell_ith">' +val["sv-tenmonhoc"]  + '</div>';
       strText += '<div class="cell_ith">'+ '<button class="btn-hutech more" onclick="viewrp('+val["sv-masv"]+')"><i class="fas fa-search"><span>&nbsp;REVIEW</span></i></button>'  + "</div></div>";
-      total_student = val.tongDSHD;
     });
     strText += "</div>";
       $(".studentAll").html(strText);
-      $("span#total_stduent").html(total_student);
+      $("span#total_stduent").html(data.extension.tongDSHD);
   });
 }
 $(".studentManager").ready(function() {
