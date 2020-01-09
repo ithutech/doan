@@ -145,7 +145,14 @@ p.none-select{
 }
 
 /* Message notification */
-
+span.Message-box {
+    padding: 6px 10px 2px 10px;
+    background-color: #f5e407;
+    border-radius: 5px;
+    font-size: 20px;
+    position: relative;
+    top: -7px;
+}
 .Message {
     font-weight: 300;
     display: table;
