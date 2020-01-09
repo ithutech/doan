@@ -145,6 +145,7 @@ p.none-select{
 }
 
 /* Message notification */
+
 span.Message-box {
     padding: 6px 10px 2px 10px;
     background-color: #f5e407;
@@ -254,6 +255,51 @@ span.Message-box {
  .Message-close:hover {
 	 background-color: rgba(0, 0, 0, 0.5);
 }
+span.Message-icon-header {
+    position: relative;
+    top: -30px;
+    font-size: 20px;
+    right: 10px;
+    
+}
+span.Message-icon-header i{
+
+    -webkit-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    animation:spin 0.2s linear infinite;
+    -webkit-animation-delay: 2s; 
+    animation-delay: 2s; 
+    
+}
+
+@keyframes spin { 
+50% { -webkit-transform: rotate(40deg); transform:rotate(40deg); 
+
+} 
+50%{
+    -webkit-transform: rotate(40deg); transform:rotate(40deg); 
+}
+
+}
+@-moz-keyframes spin { 
+50% { -webkit-transform: rotate(40deg); transform:rotate(40deg); 
+
+} 
+50%{
+    -webkit-transform: rotate(40deg); transform:rotate(40deg); 
+}
+
+}
+@-webkit-keyframes spin { 
+50% { -webkit-transform: rotate(40deg); transform:rotate(40deg); 
+
+} 
+50%{
+    -webkit-transform: rotate(40deg); transform:rotate(40deg); 
+}
+
+}
+
  .u-italic {
 	 font-style: italic;
 }
