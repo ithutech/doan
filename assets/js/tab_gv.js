@@ -119,7 +119,7 @@ function studentManager_() {
     });
     strText += "</div>";
       $(".studentAll").html(strText);
-      $(".view_alert_manager p.span#total_stduent").html(total_student);
+      $("span#total_stduent").html(total_student);
   });
 }
 $(".studentManager").ready(function() {
