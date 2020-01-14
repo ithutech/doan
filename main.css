@@ -988,3 +988,118 @@ div#content_news li {
     background: transparent url(//www.hutech.edu.vn/images/bullet1.gif) no-repeat scroll 0 8px;
     padding: 0 0 0 14px;
 }
+.row-6-full {
+  float: left;
+  width: 48.5%;
+  border: 1px solid #efefef;
+  /* box-shadow: 1px 1px 2px #4e8d9c; */
+  position: relative;
+}
+
+.row-6-full:nth-child(1) {
+  margin-right: 20px;
+}
+
+
+.bottom-10px {
+  margin-bottom: 10px;
+}
+
+.row-12.gap-top30px {
+  position: relative;
+  top: 50px;
+}
+
+.row-12 {
+    width: 100%;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+span.readmore {
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: lightblue;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+
+span.readmore:hover {
+  background-color: #37859e;
+  transition: 0.5s;
+}
+
+.content-notification {
+  padding: 7px 7px 36px;
+      overflow: auto;
+      max-height: 200px;
+      min-height: 200px;
+}
+
+.title-bg-lightyellow {
+  background-color: #ffffb3;
+  padding: 7px;
+}
+
+.title.bottom-10px.title-bg-blue {
+  background-color: var(--blue);
+  padding: 7px;
+  color: white;
+}
+
+.article-details {
+  margin-top: -10px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cfcfcf;
+  font-style: italic;
+  padding: 3px 7px;
+}
+
+.new-icon {
+  position: absolute;
+  right: -15px;
+  top: -24px;
+  width: 44px;
+  height: 44px;
+  background: url(https://img.icons8.com/officel/40/000000/new.png);
+  background-size: cover;
+  -webkit-animation: spin360 2s linear infinite;
+  -moz-animation: spin360 2s linear infinite;
+  animation: spin360 2s linear infinite;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+
+@keyframes spin360 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+  }
+
+}
+
+@-moz-keyframes spin360 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+  }
+
+}
+
+@-webkit-keyframes spin360 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+  }
+
+}
