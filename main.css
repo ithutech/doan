@@ -1103,3 +1103,10 @@ span.readmore:hover {
   }
 
 }
+.title.bottom-10px.title-bg-green {
+    background-color: #96e096a1;
+    padding: 7px 7px 10px 15px;
+    color: #6d1616;
+    font-weight: bold;
+    text-transform: uppercase;
+}
