@@ -309,6 +309,7 @@ function article_studentNotif() {
       viewer: true,
       initialValue: data.content["newcontent-ithutech"]
     });
+      $(".downloading").html("");
+
   });
-  $(".downloading").html("");
 }
