@@ -89,7 +89,9 @@ li.nav-links:nth-child(2) {
   color: #000;
   background-color: #fff;
 }
-
+#article_alert_contents h2 {
+    font-size: 13px;
+}
 .wrapper-header .menu {
   width: 80%;
   margin-left: 3.5%
