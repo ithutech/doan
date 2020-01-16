@@ -955,10 +955,15 @@ select.input.input_f.select_mon_hoc {
     border: none;
     padding: 14px 0 12px 0;
 }
-.lg-oad.loading-register-topic {
+.lg-oad.loading-register-topic,.lg-oad.loading-push-notification {
     float: right;
     margin: 2px 0 0 10px;
 }
+
+input#pushkey::placeholder {
+    color: #00789c;
+}
+
 .gap-top50px{
   clear: both;
   margin-top: 50px;
