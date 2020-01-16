@@ -202,7 +202,8 @@ $("#pushsubmit").click(function(event) {
     },
     jsonp: "callback",
     success: function(response) {
-      alert(response.result);
+      alert(response.result);  document.querySelector(".form-input-absoluted .loading-push-notification").classList.add("is-hidden");
+
     }
   });
 })
