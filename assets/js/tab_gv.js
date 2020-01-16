@@ -184,7 +184,7 @@ $("#view_topic_st_reg").ready(function() {
   topicManager_();
 })
 $("#pushsubmit").click(function(event) {
-  var key = $.trim($("#pushtitlecontent").val()).replace(/ /g, '');
+  var key = $.trim($("#pushkey").val()).replace(/ /g, '');
   var content = editor_contentNotification.getValue();
   var title = $("#pushtitlecontent").val();
   if (content.length == "" || content.length <= 10)
