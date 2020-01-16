@@ -51,6 +51,10 @@ $('nav a').click(function(e) {
     $('.settings').removeClass('noshow');
     $('.rightbox').children().not('.settings').addClass('noshow');
   }
+  else if(this.id === 'pushNotification') {
+    $('.pushNotification').removeClass('noshow');
+    $('.rightbox').children().not('.pushNotification').addClass('noshow');
+  }
   else if(this.id === 'notif') {
     $('.notif').removeClass('noshow');
     $('.rightbox').children().not('.notif').addClass('noshow');
@@ -139,7 +143,7 @@ function profile_(){
 
       // Change password form
       strText += '<form class="form-view top-10px" onsubmit="return false;">';
-      strText += '<div class="form-input validate-input" data-validate="Nhập mật khẩu cũ"> <span class="label-input">Nhập mật khẩu cũ:</span> <input id="oldPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu cũ"> <span class="focus-input"></span> </div><div class="form-input validate-input" data-validate="Nhập mật khẩu mới"> <span class="label-input">Nhập mật khẩu mới:</span> <input id="newPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới"> <span class="focus-input"></span> </div><div class="form-input-absoluted"><input id="submitChangePW" type="submit" class="inputButton btn-left" value="ĐỒNG Ý THAY ĐỔI MẬT KHẨU"> <div class="lg-oad loading-change  is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div></div class="script_tab_sv"><script src="./assets/js/tab_profile.js"></script></div>';
+      strText += '<div class="form-input validate-input" data-validate="Nhập mật khẩu cũ"> <span class="label-input">Nhập mật khẩu cũ:</span> <input id="oldPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu cũ"> <span class="focus-input"></span> </div><div class="form-input validate-input" data-validate="Nhập mật khẩu mới"> <span class="label-input">Nhập mật khẩu mới:</span> <input id="newPASS" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới"> <span class="focus-input"></span> </div><div class="form-input-absoluted"><input id="submitChangePW" type="submit" class="inputButton btn-left" value="ĐÔNG Ý THAY ĐỖI MẬT KHẨU"> <div class="lg-oad loading-change  is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div></div class="script_tab_sv"><script src="./assets/js/tab_profile.js"></script></div>';
 
     });
     strText += '</form></div>';
@@ -178,4 +182,27 @@ function topicManager_(){
 }
 $("#view_topic_st_reg").ready(function() {
   topicManager_();
+})
+$("#pushsubmit").click(function(event) {
+  var key = $.trim($("#pushtitlecontent").val()).replace(/ /g, '');
+  var content = editor_contentNotification.getValue();
+  var title = $("#pushtitlecontent").val();
+  if (content.length == "" || content.length <= 10)
+    return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
+  if (title.length == "" || title.length >50)
+      return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
+  document.querySelector(".form-input-absoluted .loading-push-notification").classList.remove("is-hidden");
+  $.ajax({
+    url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=ltpush&" + getCoo56yhjkk(),
+    type: "post",
+    data: {
+      "key": key,
+      "title": title,
+      "contentnotification": content,
+    },
+    jsonp: "callback",
+    success: function(response) {
+      alert(response.result);
+    }
+  });
 })
