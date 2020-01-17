@@ -1116,3 +1116,42 @@ span.readmore:hover {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+
+
+/* CSS ĐẨY THÔNG BÁO API GOOGLE APP WEB, API EMAIL */
+.btnEmail {
+    background-color: white;
+    color: #b60d0d;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.btnEmail:hover {
+    background-color: var(--blue);
+    transition: 0.5s;
+    color: white;
+}
+
+.mailAPI:after {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url("https://loading.io/assets/img/p/landing/tryit.png");
+  background-size: cover;
+  transform: rotate(60deg);
+  animation: spin 0.3s linear infinite;
+}
+
+
+.modelConfirm {
+    width: 400px;
+    height: 200px;
+    z-index: 1000;
+}
+
+.float-right {
+    float: right;
+}
