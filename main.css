@@ -302,9 +302,7 @@ input.login:hover {
 }
 
 /* Loading */
-.is-hidden, .login.active.is-hidden {
-  display: none;
-}
+
 
 .loading {
     position: absolute;
@@ -1154,4 +1152,6 @@ span.readmore:hover {
 
 .float-right {
     float: right;
+}.is-hidden, .login.active.is-hidden {
+  display: none;
 }
