@@ -222,7 +222,7 @@ $("#sendconfirm").click(function(event) {
     return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
   if (title.length == "" || title.length >50)
       return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
-  document.querySelector(".form-input-absoluted .downloading").classList.remove("is-hidden");
+  document.querySelector(".form-input-absoluted .sending").classList.remove("is-hidden");
   $.ajax({
     url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=ltsendEmail&" + getCoo56yhjkk(),
     type: "post",
@@ -233,7 +233,8 @@ $("#sendconfirm").click(function(event) {
     jsonp: "callback",
     success: function(response) {
       alert(response.result);
-      
+      document.querySelector(".form-input-absoluted .sending").classList.add("is-hidden");
+
     }
   });
 })
