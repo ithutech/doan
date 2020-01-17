@@ -1146,7 +1146,7 @@ span.readmore:hover {
 
 .modelConfirm {
     width: 400px;
-    height: 200px;
+    min-height: 200px;
     z-index: 1000;
 }
 
