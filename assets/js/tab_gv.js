@@ -1,4 +1,5 @@
 /*active button class onclick*/
+const jsLD = '<div class="loader-dot"> <div class="loading"> <div class="a" style="--n: 5;"> <div class="dot_lhie dot_ldcontent" style="--i: 0;"></div> <div class="dot_lhie dot_ldcontent" style="--i: 1;"></div> <div class="dot_lhie dot_ldcontent" style="--i: 2;"></div> <div class="dot_lhie dot_ldcontent" style="--i: 3;"></div> <div class="dot_lhie dot_ldcontent" style="--i: 4;"></div> </div> </div> </div>';
 $('nav a').click(function(e) {
   e.preventDefault();
   $('nav a').removeClass('active');
@@ -96,7 +97,7 @@ function viewrp(mssv){
 }
 
 $('.modelDetails').ready(function() {
-  var span = document.getElementsByClassName('modelDetails-close')[0];
+  var span = document.getElementsByClassName('modelDetails-close');
   span.onclick = function() {
     $('.modelDetails').css("display","none");
   }
@@ -161,17 +162,17 @@ function topicManager_(){
   var url = APIurl  + getCoo56yhjkk() + "&action=lt_view_topic";
 
   $.getJSON(url, function(data) {
-    var strText = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith">Thời gian đăng ký</div> <div class="cell_ith">MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith">Tên đề tài</div> <div class="cell_ith">Mô tả đề tài</div> <div class="cell_ith">Tên môn học </div></div>';
+    var strText = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith">Thời gian đăng ký</div> <div class="cell_ith">MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith">Tên đề tài</div> <div class="cell_ith">Mô tả đề tài</div> <div class="cell_ith">Tên môn học </div><div class="cell_ith">Công cụ </div></div>';
     $.each(data.lookup, function(key, val) {
       strText += '<div class="row_ith">'+ '<div class="cell_ith">'+ val["time-reg"] + '</div>';
       strText += '<div class="cell_ith">' +val["sv-masv"] + '</div>';
       strText += '<div class="cell_ith">' +val["sv-hoten"] + '</div>';
 
       strText += '<div class="cell_ith">' +val["ten-detai"] + '</div>';
-      strText += '<div class="cell_ith">' +val["mota-detai"] + '</div>';
+      strText += '<div class="cell_ith" style="width: 300px">' +val["mota-detai"] + '</div>';
       strText += '<div class="cell_ith">' +val["ten-monhoc"] + '</div>';
 
-//       strText += '<div class="cell_ith">'+ '<div class="topic_approval"><button class="btn-hutech more" onclick="viewrp('+val["sv-masv"]+')"><i class="fas fa-check"><span>&nbsp;DUYỆT</span></i></button>'  + "</div></div></div>";
+      strText += '<div class="cell_ith">' + '<button class="btn-hutech more" onclick="xemmotadetai(' + val["sv-masv"] + ')">XEM ĐỀ TÀI VÀ KIỂM DUYỆT</button>' + "</div></div>";
       strText += '</div>';
 
     });
@@ -239,7 +240,7 @@ $("#sendconfirm").click(function(event) {
   });
 })
 $("#sendEmail").click(function(event) {
-  $(".modelDetails").css("display","block");
+    $(".modelDetails").css("display","block")[0];
 })
 $('.modelDetails').ready(function() {
   var span = document.getElementsByClassName('cancelconfirm')[0];
@@ -247,3 +248,21 @@ $('.modelDetails').ready(function() {
     $('.modelDetails').css("display","none");
   }
 });
+
+
+function xemmotadetai(mssv) {
+  $(".modelCT_Decription").css("display", "block")[0];
+  $('.wrapper-content-description').ready(function() {
+
+  $("#sv_content_description").html(jsLD);
+    var url = APIurl +"&mssv=" + mssv + "&action=xemmotadetai";
+    $.getJSON(url, function(data) {
+        var editor = tui.Editor.factory({
+        el: document.querySelector('#sv_content_description'),
+        viewer: true,
+        minHeight: '500px',
+        initialValue: data.motadetai
+      });
+    });
+  });
+}
