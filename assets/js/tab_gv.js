@@ -99,7 +99,8 @@ function viewrp(mssv){
 $('.modelDetails').ready(function() {
   var span = document.getElementsByClassName('modelDetails-close');
   span.onclick = function() {
-    $('.modelDetails').css("display","none");
+    $('.modelDetails').css("display","none");    $('.modelCT_Decription').css("display","none");
+
   }
 });
 
