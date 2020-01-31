@@ -96,12 +96,11 @@ function viewrp(mssv){
     $(".modelDetails").css("display","block")
 }
 
-$('.modelDetails').ready(function() {
-  var span = document.getElementsByClassName('modelDetails-close');
-  span.onclick = function() {
-    $('.modelDetails').css("display","none");    $('.modelCT_Decription').css("display","none");
-
-  }
+$(document).ready(function(){
+  $('.modelDetails-close').click(function(event) {
+      $('.modelDetails').css("display","none");
+      $('.modelCT_Decription').css("display","none");
+  });  
 });
 
 function studentManager_() {
