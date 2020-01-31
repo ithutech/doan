@@ -466,7 +466,7 @@ li.nav-links.login.ope-log.active_l0G {
 }
 
 /* Model popup */
-.modelDetails,.modelAlert  {
+.modelDetails,.modelAlert, .modelCT_Decription  {
   display: none;
   /* Hidden by default */
   position: fixed;
@@ -1154,4 +1154,54 @@ span.readmore:hover {
     float: right;
 }.is-hidden, .login.active.is-hidden {
   display: none;
+}
+
+
+/*  XEM THÊM NỘI DUNG VÀ KIỂM DUYỆT ĐỀ TÀI */
+.model-col8 {
+    width: 800px;
+    min-height: 600px;
+}
+
+.wrapper-content-description {
+    height: 492px;
+    overflow: auto;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+input.btn-white-input {
+    background-color: white;
+    width: 55%;
+    border: 2px solid #b0b0b078;
+    cursor: text;
+    color: #595959;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.btn-right {
+    float: right;
+}
+
+.new_option:before {
+    position: absolute;
+    content: "Nội dung thông báo qua EMAIL sinh viên";
+    bottom: -17px;
+    color: #bf0000d6;
+    font-style: italic;
+        font-size: 12px;
+}
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.dot_ldcontent, .dot_ldcontent:after {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    animation: aDot 0.7s calc(((var(--i) + var(--o, 0))/var(--n) - 1)*0.7s) infinite;
 }
