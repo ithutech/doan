@@ -1328,7 +1328,9 @@ button.btnfly.clicked {
   -o-animation: bounce-in 0.3s;
   -ms-animation: bounce-in 0.3s;
   animation: bounce-in 0.3s;
-  cursor: default;
+  pointer-events: none;
+    user-select: none;
+    cursor: no-drop;
 }
 button.btnfly.clicked svg {
   -webkit-animation: flyaway 1.3s linear;

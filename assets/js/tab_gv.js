@@ -277,4 +277,19 @@ $(".modelCT_Decription").ready(function() {
       alertbox.show(data.result);
     });
   })
+
+  // Toggle class
+  $('#approved_detai').click(function() {
+    $('#approved_detai').toggleClass('clicked');
+    setTimeout(function wait(){
+      document.querySelector(".btnfly").classList.remove("clicked");
+    }, 3000);
+  });
+
+  $('#reject_detai').click(function() {
+    $('#reject_detai').toggleClass('clicked');
+    setTimeout(function wait(){
+      document.querySelector(".btnfly").classList.remove("clicked");
+    }, 3000);
+  });
 });
