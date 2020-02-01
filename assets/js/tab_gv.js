@@ -100,7 +100,7 @@ $(document).ready(function(){
   $('.modelDetails-close').click(function(event) {
       $('.modelDetails').css("display","none");
       $('.modelCT_Decription').css("display","none");
-  });  
+  });
 });
 
 function studentManager_() {
@@ -271,15 +271,17 @@ $(".modelCT_Decription").ready(function() {
   var note = $("#sendtext_optionalEmail").val();
   var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
   $("#approved_detai").click(function(event) {
-      var url = APIurl +"&mssv=" + mssv + "&note=" + note +  "&action=duyetdetai";
+      var url = APIurl + getCoo56yhjkk() +"&mssv=" + mssv + "&note=" + note +  "&action=duyetdetai";
       $.getJSON(url, function(data) {
         // return alert(data.result)
+        alertbox.show(data.result);
       });
   })
   $("#reject_detai").click(function(event) {
-      var url = APIurl +"&mssv=" + mssv + "&note=" + note +  "&action=tuchoidetai";
+      var url = APIurl + getCoo56yhjkk() +"&mssv=" + mssv + "&note=" + note +  "&action=tuchoidetai";
       $.getJSON(url, function(data) {
         // return alert(data.result)
+        alertbox.show(data.result);
       });
   })
 });
