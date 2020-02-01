@@ -257,12 +257,29 @@ function xemmotadetai(mssv) {
   $("#sv_content_description").html(jsLD);
     var url = APIurl +"&mssv=" + mssv + "&action=xemmotadetai";
     $.getJSON(url, function(data) {
-        var editor = tui.Editor.factory({
+      var editor = tui.Editor.factory({
         el: document.querySelector('#sv_content_description'),
         viewer: true,
         minHeight: '500px',
         initialValue: data.motadetai
       });
+      $("#mssv_require").val(data.mssv);
     });
   });
 }
+$(".modelCT_Decription").ready(function() {
+  var note = $("#sendtext_optionalEmail").val();
+  var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
+  $("#approved_detai").click(function(event) {
+      var url = APIurl +"&mssv=" + mssv + "&note=" + note +  "&action=duyetdetai";
+      $.getJSON(url, function(data) {
+        // return alert(data.result)
+      });
+  })
+  $("#reject_detai").click(function(event) {
+      var url = APIurl +"&mssv=" + mssv + "&note=" + note +  "&action=tuchoidetai";
+      $.getJSON(url, function(data) {
+        // return alert(data.result)
+      });
+  })
+});
