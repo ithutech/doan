@@ -1274,7 +1274,7 @@ input.btn-white-input {
 
 @media (min-width: 768px) {
   .alert-area {
-    width: 300px;
+    width: 350px;
     left: auto;
     right: 0;
   }
@@ -1283,5 +1283,8 @@ input.btn-white-input {
 .alert-content::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f007";
+  content: "\f058  ";
+}
+.alert-content {
+    font-size: 14px;
 }
