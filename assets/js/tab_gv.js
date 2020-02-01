@@ -289,7 +289,7 @@ $(".modelCT_Decription").ready(function() {
   $('#reject_detai').click(function() {
     $('#reject_detai').toggleClass('clicked');
     setTimeout(function wait(){
-      document.querySelector(".btnfly").classList.remove("clicked");
+      document.querySelector(".btnfly.clicked").classList.remove("clicked");
     }, 3000);
   });
 });

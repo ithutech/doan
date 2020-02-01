@@ -124,7 +124,7 @@ var AlertBox = function(id, option) {
 // Thiết lập thời gian để tắt alert
 
 const alertbox = new AlertBox('#alert-area', {
-  closeTime: 3000,
+  closeTime: 6000,
   persistent: false,
   hideCloseButton: false
 });
