@@ -1323,7 +1323,6 @@ button.btnfly.clicked {
   background-color: #cff5b3;
   border: 2px solid #cff5b3;
   color: #6aaa3b;
-  padding-right: 6px;
   -webkit-animation: bounce-in 0.3s;
   -moz-animation: bounce-in 0.3s;
   -o-animation: bounce-in 0.3s;
@@ -1336,9 +1335,9 @@ button.btnfly.clicked svg {
   -moz-animation: flyaway 1.3s linear;
   -o-animation: flyaway 1.3s linear;
   -ms-animation: flyaway 1.3s linear;
-  animation: flyaway 1.3s linear;
-  top: -80px;
-  right: -1000px;
+  /* animation: flyaway 1.3s linear; */
+  /* top: -80px; */
+  /* right: -10px; */
 }
 button.btnfly.clicked svg path {
   fill: #6aaa3b;
@@ -1362,7 +1361,7 @@ button.btnfly.clicked svg path {
     transform: rotate(10deg);
     top: 13px;
     right: 0px;
-    height: 30px;
+    height: 40px;
   }
   20% {
     -webkit-transform: rotate(-20deg);
@@ -1372,7 +1371,7 @@ button.btnfly.clicked svg path {
     transform: rotate(-20deg);
     top: 13px;
     right: -130px;
-    height: 45px;
+    height: 55px;
   }
   40% {
     -webkit-transform: rotate(10deg);
