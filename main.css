@@ -1205,3 +1205,83 @@ input.btn-white-input {
     border-radius: 50%;
     animation: aDot 0.7s calc(((var(--i) + var(--o, 0))/var(--n) - 1)*0.7s) infinite;
 }
+
+
+/* Alert pushNotification */
+.alert-area {
+  max-height: 100%;
+  position: fixed;
+  bottom: 5px;
+  left: 20px;
+  right: 20px;
+}
+
+.alert-box {
+  font-size: 16px;
+      color: #1e6012;
+      background: rgba(47, 218, 68, 0.55);
+      line-height: 1.3em;
+      padding: 10px 15px;
+      margin: 5px 10px;
+      position: relative;
+      border-radius: 10px;
+      transition: opacity 0.2s ease-in;
+}
+
+.alert-box.hide {
+  opacity: 0;
+}
+
+.alert-close {
+  background: transparent;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.alert-close:before,
+.alert-close:after {
+  content: '';
+  width: 15px;
+  border-top: solid 2px white;
+  position: absolute;
+  top: 5px;
+  right: -1px;
+  display: block;
+}
+
+.alert-close:before {
+  transform: rotate(45deg);
+}
+
+.alert-close:after {
+  transform: rotate(135deg);
+}
+
+.alert-close:hover:before,
+.alert-close:hover:after {
+  border-top: solid 2px #d8d8d8;
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .alert-area {
+    left: 100px;
+    right: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .alert-area {
+    width: 300px;
+    left: auto;
+    right: 0;
+  }
+}
+
+.alert-content::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
