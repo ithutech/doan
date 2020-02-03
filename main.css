@@ -1217,15 +1217,15 @@ input.btn-white-input {
 }
 
 .alert-box {
-  font-size: 16px;
-      color: #1e6012;
-      background: rgba(47, 218, 68, 0.55);
-      line-height: 1.3em;
-      padding: 10px 15px;
-      margin: 5px 10px;
-      position: relative;
-      border-radius: 10px;
-      transition: opacity 0.2s ease-in;
+    color: #052010;
+    background: rgb(125, 255, 142);
+    line-height: 1.3em;
+    box-shadow: 3px 3px 5px #108110;
+    padding: 10px 15px;
+    margin: 5px 10px;
+    position: relative;
+    border-radius: 10px;
+    transition: opacity 0.2s ease-in;
 }
 
 .alert-box.hide {
@@ -1283,7 +1283,7 @@ input.btn-white-input {
 .alert-content::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f058  ";
+  content: "\f058  ";font-size: 20px;
 }
 .alert-content {
     font-size: 14px;
