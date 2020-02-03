@@ -164,7 +164,7 @@ function topicManager_() {
       strText += '<div class="cell_ith">' + val["ten-monhoc"] + '</div>';
 
       strText += '<div class="cell_ith">' + '<button class="btn-hutech more" onclick="xemmotadetai(' + val["sv-masv"] + ')">XEM ĐỀ TÀI VÀ KIỂM DUYỆT</button>' + "</div></div>";
-      strText += '</div>';
+//       strText += '</div>';
 
     });
     strText += "</div>";
