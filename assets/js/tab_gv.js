@@ -167,9 +167,9 @@ function topicManager_() {
       strText += '<button class="btn-hutech rejected">TỪ CHỐI</button>' + "</div>";
       }
       else if(val.confirm == "APRROVED") {
-      strText += '<button class="btn-hutech aprroved" onclick="xemmotadetai(' + val["sv-masv"] + ')">ĐÃ DUYỆT</button>' + "</div>";	
+      strText += '<button class="btn-hutech aprroved" onclick="xemmotadetai(' + val.madetai + ')">ĐÃ DUYỆT</button>' + "</div>";	
       }
-      else strText += '<button class="btn-hutech more" onclick="xemmotadetai(' + val["sv-masv"] + ')">XEM ĐỀ TÀI & XÉT DUYỆT</button>' + "</div>";		
+      else strText += '<button class="btn-hutech more" onclick="xemmotadetai(' + val.madetai + ')">XEM ĐỀ TÀI & XÉT DUYỆT</button>' + "</div>";		
       strText += "</div>";
 
     });
