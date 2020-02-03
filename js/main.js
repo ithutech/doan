@@ -91,7 +91,7 @@ var AlertBox = function(id, option) {
       var alertClose = document.createElement('A');
       var alertClass = this;
       alertContent.classList.add('alert-content');
-      alertContent.innerText = msg;
+      alertContent.innerHTML = msg;
       alertClose.classList.add('alert-close');
       alertClose.setAttribute('href', '#');
       alertBox.classList.add('alert-box');
