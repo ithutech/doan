@@ -1628,3 +1628,14 @@ button.btnfly.clicked svg path {
     padding-left: 6px;
   }
 }
+/* TOPIC REGISTER CSS */
+.aprroved {
+    width: 100%;
+    background-color: green;
+}
+
+.rejected {
+    width: 100%;
+    background-color: #ff5050;
+    pointer-events: none;
+}
