@@ -247,12 +247,12 @@ $('.modelDetails').ready(function() {
 });
 
 
-function xemmotadetai(mssv) {
+function xemmotadetai(madetai) {
   $(".modelCT_Decription").css("display", "block")[0];
   $('.wrapper-content-description').ready(function() {
 
     $("#sv_content_description").html(jsLD);
-    var url = APIurl + "&mssv=" + mssv + "&action=xemmotadetai";
+    var url = APIurl + "&madetai=" + madetai + "&action=xemmotadetai";
     $.getJSON(url, function(data) {
       var editor = tui.Editor.factory({
         el: document.querySelector('#sv_content_description'),
