@@ -178,9 +178,16 @@ function topicManager_() {
 
   });
 }
+
 $("#view_topic_st_reg").ready(function() {
   topicManager_();
+  $("#renew_list_topic").click(function(event){
+    var jsLD2 = '<div class="row-12"> <div class="title bottom-10px title-bg-green"> <span>ĐANG TẢI DANH SÁCH, XIN VUI LÒNG ĐỢI ...</span></div> </div>';
+    $("#view_topic_st_reg").html(jsLD2);
+    topicManager_();
+    });
 })
+ 
 $("#pushsubmit").click(function(event) {
   var key = $.trim($("#pushkey").val()).replace(/ /g, '');
   var content = editor_contentNotification.getValue();
