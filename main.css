@@ -1639,3 +1639,12 @@ button.btnfly.clicked svg path {
     background-color: #ff5050;
     pointer-events: none;
 }
+#renew_list_topic {
+    cursor: pointer;
+    user-select: none;
+}
+#renew_list_topic:hover {
+    opacity: 0.7;
+    border: 1px solid #555555;
+    transition: 500ms;
+}
