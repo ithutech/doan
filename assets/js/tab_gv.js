@@ -256,7 +256,15 @@ $("#sendconfirm").click(function(event) {
     }
   });
 })
-
+$("#sendEmail").click(function(event) {
+  $(".modelDetails").css("display", "block")[0];
+})
+$('.modelDetails').ready(function() {
+  var span = document.getElementsByClassName('cancelconfirm')[0];
+  span.onclick = function() {
+    $('.modelDetails').css("display", "none");
+  }
+});
 
 function xemmotadetai(madetai) {
   $(".modelCT_Decription").css("display", "block")[0];
