@@ -188,7 +188,32 @@ $("#view_topic_st_reg").ready(function() {
     });
 })
  
-$("#pushsubmit").click(function(event) {
+// $("#pushsubmit").click(function(event) {
+//   var key = $.trim($("#pushkey").val()).replace(/ /g, '');
+//   var content = editor_contentNotification.getValue();
+//   var title = $("#pushtitlecontent").val();
+//   if (content.length == "" || content.length <= 10)
+//     return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
+//   if (title.length == "" || title.length > 50)
+//     return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
+//   document.querySelector(".form-input-absoluted .downloading").classList.remove("is-hidden");
+//   $.ajax({
+//     url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=ltpush&" + getCoo56yhjkk(),
+//     type: "post",
+//     data: {
+//       "key": key,
+//       "title": title,
+//       "contentnotification": content,
+//     },
+//     jsonp: "callback",
+//     success: function(response) {
+//       alert(response.result);
+//       document.querySelector(".form-input-absoluted .downloading").classList.add("is-hidden");
+
+//     }
+//   });
+// })
+$("#sendconfirm").click(function(event) {
   var key = $.trim($("#pushkey").val()).replace(/ /g, '');
   var content = editor_contentNotification.getValue();
   var title = $("#pushtitlecontent").val();
@@ -196,37 +221,12 @@ $("#pushsubmit").click(function(event) {
     return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
   if (title.length == "" || title.length > 50)
     return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
-  document.querySelector(".form-input-absoluted .downloading").classList.remove("is-hidden");
-  $.ajax({
-    url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=ltpush&" + getCoo56yhjkk(),
-    type: "post",
-    data: {
-      "key": key,
-      "title": title,
-      "contentnotification": content,
-    },
-    jsonp: "callback",
-    success: function(response) {
-      alert(response.result);
-      document.querySelector(".form-input-absoluted .downloading").classList.add("is-hidden");
-
-    }
-  });
-})
-$("#sendconfirm").click(function(event) {
-  var content = editor_contentNotification.getValue();
   var htmlcontents = tui.Editor.factory({
     el: document.querySelector('#htmlcontent'),
     viewer: true,
     initialValue: content
   });
   var gethtmlcontents = $("#htmlcontent .tui-editor-contents").html();
-
-  var title = $("#pushtitlecontent").val();
-  if (content.length == "" || content.length <= 10)
-    return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
-  if (title.length == "" || title.length > 50)
-    return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
   document.querySelector(".form-input-absoluted .sending").classList.remove("is-hidden");
   $.ajax({
     url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=ltsendEmail&" + getCoo56yhjkk(),
@@ -242,16 +242,20 @@ $("#sendconfirm").click(function(event) {
 
     }
   });
+  $.ajax({
+    url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=ltpush&" + getCoo56yhjkk(),
+    type: "post",
+    data: {
+      "key": key,
+      "title": title,
+      "contentnotification": content,
+    },
+    jsonp: "callback",
+    success: function(response) {
+      alert(response.result);
+    }
+  });
 })
-$("#sendEmail").click(function(event) {
-  $(".modelDetails").css("display", "block")[0];
-})
-$('.modelDetails').ready(function() {
-  var span = document.getElementsByClassName('cancelconfirm')[0];
-  span.onclick = function() {
-    $('.modelDetails').css("display", "none");
-  }
-});
 
 
 function xemmotadetai(madetai) {
