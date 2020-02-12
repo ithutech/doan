@@ -919,14 +919,14 @@ article.introduc, article.product-review {
     border-radius: 5px;
 }
 footer.footer .ithutech-row p,footer.footer .ithutech-row a,footer.footer .ithutech-row strong {
-    text-align: center;
+/*     text-align: center;
     text-transform: uppercase;
-    font-style: italic;
-    font-size: 10px;
+    font-style: italic; */
+    font-size: 12px;
 }
 footer.footer.copywrite {
-    user-select: none;
-    pointer-events: none;
+/*     user-select: none;
+    pointer-events: none; */
 }
 footer.footer .ithutech-row p strong {
   font-weight: bold;
@@ -936,6 +936,13 @@ footer.footer .ithutech-row p strong {
 }div#viewerSection .title {border-bottom: 1px solid;font-size: 18px;color: #1f6e70;
 margin-bottom: 10px;
 
+}.bg-blue {
+    background-color: var(--blue);
+}
+
+.full-width-absoluted {
+    position: absolute;
+    width: 100%;
 }
 
 div#viewerSection .title::after {
