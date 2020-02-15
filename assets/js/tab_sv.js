@@ -278,10 +278,8 @@ $("#submitREGTOPIC").click(function(event) {
   var selectedMonHoc = e.options[e.selectedIndex].value;
   var topicDescription = editor_register_monhoc.getValue();
   var topicTitile = $("#topicTitile").val();
-  if (content.length == "" || content.length <= 10)
-    return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
-  if (title.length == "" || title.length > 50)
-    return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
+  if (topicDescription.length == "" || topicDescription.length < 2)
+    return alert('Vui lòng không để trống hoặc quá ít nội dung không hiểu đề tài');
 
   document.querySelector(".form-input-absoluted .loading-register-topic").classList.remove("is-hidden");
   $.ajax({
