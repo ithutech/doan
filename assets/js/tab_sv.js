@@ -255,25 +255,51 @@ function studentViewRp_() {
 $("select.input.input_f.select_mon_hoc").change(function() {
   var selectedMonHoc = $(this).children("option:selected").val();
 });
+// $("#submitREGTOPIC").click(function(event) {
+//   var e = document.getElementById('select_mon_hoc');
+//   var selectedMonHoc = e.options[e.selectedIndex].value;
+//   var topicDescription = editor_register_monhoc.getValue();
+//   var topicTitile = $("#topicTitile").val();
+//   if (topicDescription.length == "" || topicDescription.length < 2)
+//     return alert('Vui lòng không để trống hoặc quá ít nội dung không hiểu đề tài');
+//   document.querySelector(".form-input-absoluted .loading-register-topic").classList.remove("is-hidden");
+//   var url = APIurl + getCoo56yhjkk() + "&topicTitile=" + topicTitile + "&selectedMonHoc=" + selectedMonHoc + "&topicDescription=" + encodeURIComponent(topicDescription) + "&action=stRegisterTOPIC";
+//   var strResult;
+//   $.getJSON(url, function(data) {
+//     $.each(data.output, function(key, val) {
+//       strResult = val.result;
+//     });
+//     document.querySelector(".form-input-absoluted .loading-register-topic").classList.add("is-hidden");
+//     alert(strResult);
+//   });
+// })
 $("#submitREGTOPIC").click(function(event) {
   var e = document.getElementById('select_mon_hoc');
   var selectedMonHoc = e.options[e.selectedIndex].value;
   var topicDescription = editor_register_monhoc.getValue();
   var topicTitile = $("#topicTitile").val();
-  if (topicDescription.length == "" || topicDescription.length < 2)
-    return alert('Vui lòng không để trống hoặc quá ít nội dung không hiểu đề tài');
+  if (content.length == "" || content.length <= 10)
+    return alert('Nội dung quá ngắn hoặc bạn chưa nhập nội dung! Xin cảm ơn');
+  if (title.length == "" || title.length > 50)
+    return alert('Tiêu đề không được bỏ trống và không quá 50 ký tự! Xin cảm ơn');
+
   document.querySelector(".form-input-absoluted .loading-register-topic").classList.remove("is-hidden");
-  var url = APIurl + getCoo56yhjkk() + "&topicTitile=" + topicTitile + "&selectedMonHoc=" + selectedMonHoc + "&topicDescription=" + encodeURIComponent(topicDescription) + "&action=stRegisterTOPIC";
-  var strResult;
-  $.getJSON(url, function(data) {
-    $.each(data.output, function(key, val) {
-      strResult = val.result;
-    });
-    document.querySelector(".form-input-absoluted .loading-register-topic").classList.add("is-hidden");
-    alert(strResult);
+  $.ajax({
+    url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=stDetai&" + getCoo56yhjkk(),
+    type: "post",
+    data: {
+      "topicTitile": topicTitile,
+      "selectedMonHoc": selectedMonHoc,
+      "topicDescription": encodeURIComponent(topicDescription),
+    },
+    jsonp: "callback",
+    success: function(response) {
+      document.querySelector(".form-input-absoluted .loading-register-topic").classList.add("is-hidden");
+      alert(response.result);
+
+    }
   });
 })
-
 $("#article_alert_contents").ready(function() {
   article_studentNotif();
 })
