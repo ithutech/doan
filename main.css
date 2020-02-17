@@ -996,7 +996,7 @@ input#pushkey::placeholder {
 }
 
 div#content_news li {
-    background: transparent url(//www.hutech.edu.vn/images/bullet1.gif) no-repeat scroll 0 8px;
+    /* background: transparent url(//www.hutech.edu.vn/images/bullet1.gif) no-repeat scroll 0 8px; */
     padding: 0 0 0 14px;
 }
 .row-6-full {
