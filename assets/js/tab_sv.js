@@ -350,9 +350,9 @@ $("#resetPassword").click(function(event) {
   $.getJSON(url, function(data) {
     document.querySelector(".form-input-absoluted .loading-change").classList.add("is-hidden");
 	document.querySelector(".form-input-absoluted").classList.remove("disabled");
-    if(data.success == true)
+    if(data.success == true){
 		var htmlReset = '<div class="title bottom-10px" style="color:#FAC903"><h2>Vui lòng kiểm tra mã code trong email của bạn</h2></div><form="" class="form-view" onsubmit="return false;"> <div class="form-input validate-input"> <span class="label-input">Nhập mã xác nhận</span> <input id="confirmCode" class="input input_f" type="text" name="phone" placeholder="Nhập mã xác nhận" required=""> <span class="focus-input"></span> </div><div class="form-input validate-input"> <span class="label-input">Nhập mật khẩu mới</span> <input id="newPass" class="input input_f" type="password" name="phone" placeholder="Nhập mật khẩu mới" required=""> <span class="focus-input"></span> </div> <div class="form-input validate-input"> <span class="label-input">Xác nhận mật khẩu mới:</span> <input id="confirmPass" class="input input_f" type="password" name="phone" placeholder="Xác nhận mật khẩu mới" required=""> <span class="focus-input"></span> </div> <div class="form-input-absoluted"> <input id="resetPassword" type="submit" class="inputButton btn-left" value="ĐỒNG Ý THAY ĐỖI MẬT KHẨU"> <div class="lg-oad loading-change is-hidden"><i class="fas fa-spinner fa-pulse"></i></div> </div><div class="row-12 sending"> <div class="title bottom-10px title-bg-green"> <span>Đang thay đổi mật khẩu... Vui lòng uống cafe chờ đợi</span></div></div></div>'
-		$("#htmlRSP").html(htmlReset);
+		$("#htmlRSP").html(htmlReset);}
 	else
 		alert(data.result);
   });
