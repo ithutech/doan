@@ -1655,3 +1655,10 @@ button.btnfly.clicked svg path {
     border: 1px solid #555555;
     transition: 500ms;
 }
+.ithutech-col-12 {
+    width: 100%;
+}
+
+.fix-height-auto {
+    max-height: none !important;
+}
