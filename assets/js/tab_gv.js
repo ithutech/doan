@@ -162,7 +162,7 @@ function topicManager_() {
       strText += '<div class="cell_ith">' + val["ten-detai"] + '</div>';
       strText += '<div class="cell_ith" style="width: 300px">' + val["mota-detai"] + '</div>';
       strText += '<div class="cell_ith">' + val["ten-monhoc"] + '</div>';
-      strText += '<div class="cell_ith">';
+      strText += '<div class="cell_ith" id="'+val.sv_madetai+'">';
       if(val.confirm == "REJECTED"){
       strText += '<button class="btn-hutech rejected">TỪ CHỐI</button>' + "</div>";
       }
