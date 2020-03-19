@@ -284,22 +284,38 @@ function xemmotadetai(madetai) {
   });
 }
 $(".modelCT_Decription").ready(function() {
-  $("#approved_detai").click(function(event) {
+$("#approved_detai").click(function(event) {
     var note = $("#sendtext_optionalEmail").val();
     var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
-    var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=duyetdetai";
+    var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=tuchoidetai";
+    $('.modelCT_Decription').css("display", "none");
+    $('#'+$.escapeSelector(test)).html("<span style='color:red'>Đang xét duyệt ...</span>");
     $.getJSON(url, function(data) {
-      // return alert(data.result)
-      alertbox.show(data.result);
+        alertbox.show(data.result);
+        if(data.ajax_rs == "REJECTED"){
+       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech rejected">TỪ CHỐI</button>');
+      }
+      else if(data.ajax_rs == "APRROVED") {
+       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech aprroved">ĐÃ DUYỆT</button>');	
+      }
+      
     });
   })
   $("#reject_detai").click(function(event) {
     var note = $("#sendtext_optionalEmail").val();
     var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
     var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=tuchoidetai";
+    $('.modelCT_Decription').css("display", "none");
+    $('#'+$.escapeSelector(test)).html("<span style='color:red'>Đang xét duyệt ...</span>");
     $.getJSON(url, function(data) {
       // return alert(data.result)
       alertbox.show(data.result);
+      if(data.ajax_rs == "REJECTED"){
+       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech rejected">TỪ CHỐI</button>');
+      }
+      else if(data.ajax_rs == "APRROVED") {
+       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech aprroved">ĐÃ DUYỆT</button>');	
+      }
     });
   })
 
