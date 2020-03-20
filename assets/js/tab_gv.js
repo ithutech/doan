@@ -289,7 +289,7 @@ $("#approved_detai").click(function(event) {
     var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
     var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=tuchoidetai";
     $('.modelCT_Decription').css("display", "none");
-    $('#'+$.escapeSelector(test)).html("<span style='color:red'>Đang xét duyệt ...</span>");
+    $('#'+$.escapeSelector(mssv)).html("<span style='color:red'>Đang xét duyệt ...</span>");
     $.getJSON(url, function(data) {
         alertbox.show(data.result);
         if(data.ajax_rs == "REJECTED"){
@@ -306,7 +306,7 @@ $("#approved_detai").click(function(event) {
     var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
     var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=tuchoidetai";
     $('.modelCT_Decription').css("display", "none");
-    $('#'+$.escapeSelector(test)).html("<span style='color:red'>Đang xét duyệt ...</span>");
+    $('#'+$.escapeSelector(mssv)).html("<span style='color:red'>Đang xét duyệt ...</span>");
     $.getJSON(url, function(data) {
       // return alert(data.result)
       alertbox.show(data.result);
