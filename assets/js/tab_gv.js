@@ -306,7 +306,7 @@ $(".modelCT_Decription").ready(function() {
 $("#approved_detai").click(function(event) {
     var note = $("#sendtext_optionalEmail").val();
     var mssv = $.trim($("#mssv_require").val()).replace(/ /g, '');
-    var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=tuchoidetai";
+    var url = APIurl + getCoo56yhjkk() + "&mssv=" + mssv + "&note=" + note + "&action=duyetdetai";
     $('.modelCT_Decription').css("display", "none");
     $('#'+$.escapeSelector(mssv)).html("<span style='color:red'>Đang xét duyệt ...</span>");
     $.getJSON(url, function(data) {
