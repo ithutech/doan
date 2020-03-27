@@ -312,10 +312,10 @@ $("#approved_detai").click(function(event) {
     $.getJSON(url, function(data) {
         alertbox.show(data.result);
         if(data.ajax_rs == "REJECTED"){
-       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech rejected">TỪ CHỐI</button>');
+       $('#'+$.escapeSelector(mssv)).html('<button class="btn-hutech rejected">TỪ CHỐI</button>');
       }
       else if(data.ajax_rs == "APRROVED") {
-       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech aprroved">ĐÃ DUYỆT</button>');	
+       $('#'+$.escapeSelector(mssv)).html('<button class="btn-hutech aprroved">ĐÃ DUYỆT</button>');	
       }
       
     });
@@ -330,10 +330,10 @@ $("#approved_detai").click(function(event) {
       // return alert(data.result)
       alertbox.show(data.result);
       if(data.ajax_rs == "REJECTED"){
-       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech rejected">TỪ CHỐI</button>');
+       $('#'+$.escapeSelector(mssv)).html('<button class="btn-hutech rejected">TỪ CHỐI</button>');
       }
       else if(data.ajax_rs == "APRROVED") {
-       $('#'+$.escapeSelector(test)).html('<button class="btn-hutech aprroved">ĐÃ DUYỆT</button>');	
+       $('#'+$.escapeSelector(mssv)).html('<button class="btn-hutech aprroved">ĐÃ DUYỆT</button>');	
       }
     });
   })
