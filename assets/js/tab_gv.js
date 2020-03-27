@@ -127,7 +127,7 @@ function studentManager_() {
       strText += '<div class="cell_ith">' + val["sv-birth"] + '</div>';
       strText += '<div class="cell_ith">' + val["sv-malop"] + '</div>';
       strText += '<div class="cell_ith">' + val["sv-tenmonhoc"] + '</div>';
-      strText += '<div class="cell_ith">' + '<button class="btn-hutech more" onclick="viewrp(' + val["sv-masv"] + ')"><i class="fas fa-search"><span>&nbsp;REVIEW</span></i></button>' + "</div></div>";
+      strText += '<div class="cell_ith">' + '<button class="btn-hutech more" onclick="viewrp(' + val["sv-masv"] + ')"><i class="fas fa-search"><span>&nbsp;Xem BC</span></i></button>' + "</div></div>";
     });
     strText += "</div>";
     $(".studentAll").html(strText);
