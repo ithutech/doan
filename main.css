@@ -933,7 +933,7 @@ footer.footer .ithutech-row p strong {
     color: indianred;
 }footer.footer .ithutech-row p a {
     text-decoration: none;
-}div#viewerSection .title {border-bottom: 1px solid;font-size: 18px;color: #1f6e70;
+}div#viewerSection .title, #gv_xem_bao_cao .title {border-bottom: 1px solid;font-size: 18px;color: #1f6e70;
 margin-bottom: 10px;
 
 }.bg-blue {
