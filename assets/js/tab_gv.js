@@ -92,7 +92,7 @@ function viewrp(mssv) {
     $.each(data.lookup, function(key, val) {
       for (var i = 1; i <= val.sotuan; i++) {
         var vrp = "vrp_" + i + "";var tuan = "tuan_" + i +"";
-        mdContent += "<div id='sheetsW" + i + "'><div class='title'>Tuần " + i + ": val[tuan] </div> \n\n";
+        mdContent += "<div id='sheetsW" + i + "'><div class='title'>Tuần " + i + ": "+val[tuan]+" </div> \n\n";
         mdContent += strView + i + "'>" + val[vrp] + "\n\n" + "</div></div>";
       }
     });
