@@ -49,8 +49,10 @@ function EncodeUnicode(str) {
 }
 
 function logout() {
-  document.cookie = 'tgnoienyzwf0zsbuaglz_a_t=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/'
-  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/'
+  document.cookie = 'tgnoienyzwf0zsbuaglz_a_t=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/';
+  document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/';
+  location.reload(true);
+
 }function understand_alert() {
   document.cookie = 'tgn0369173043lch_give_alert=; expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.ithutech.github.io;path=/'
   $('#modelAlert').css("display","none");
