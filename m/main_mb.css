@@ -267,7 +267,6 @@ input.login {
   border: 2px solid var(--blue);
   color: white;
   display: block;
-  width: 135px;
 }
 
 input.login:hover {
@@ -542,7 +541,7 @@ li.nav-links.login.ope-log.active_l0G {
 }
 
 input.disabled {
-  opacity: 0.8;
+  opacity: 0.6;
   pointer-events: none;
 }
 
