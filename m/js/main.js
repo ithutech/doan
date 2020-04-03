@@ -2,7 +2,8 @@ var APIurl = "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjY
 $("#submitLogin").click(function(event) {
   if ($("#fill-user").val() == "" || $("#fill-secret").val() == "")
     return;
-  document.querySelector(".input-group .loading").classList.remove("is-hidden");
+  document.querySelector("#submitLogin").classList.add("disabled");
+  document.querySelector("#submitLogin").value = 'ĐANG ĐĂNG NHẬP ..';
 
   var url = APIurl + "access_log=" + get_access_log() + "&action=overview";
   var HASH, alert;
@@ -15,13 +16,13 @@ $("#submitLogin").click(function(event) {
     else {
       setCoo456ysahjkie(HASH, 1);
       requestAlert(alert, 1);
-      window.location = '/';
+      window.location = '/doan/m/';
       $("#login").css({
         'display': 'none  ',
         'opacity': '0'
       });
-      document.querySelector(".input-group .loading").classList.add("is-hidden");
-
+      document.querySelector("#submitLogin").classList.remove("disabled");
+      document.querySelector("#submitLogin").value = 'ĐĂNG NHẬP';
     }
   });
 })
