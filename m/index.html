@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ITHUTECH - CỔNG QUẢN LÝ ĐỒ ÁN SINH VIÊN</title>
+  <meta name="keywords" content="Cổng quản lý đồ án, quản lý đồ án ithutech, ithutech, tra cứu thông tin giảng viên hướng dẫn">
+  <meta name="description" content="Cổng quản lý đồ án khoa Công Nghệ Thông Tin, triển khai thực hiện đồ án năm học 2019 - 2020">
+  <meta name="distribution" content="Global">
+  <meta name="GENERATOR" content="Trường Đại học Công nghệ TP.HCM - HUTECH">
+  <meta property="og:title" content="Cổng quản lý đồ án khoa Công Nghệ Thông Tin">
+  <meta property="og:description" content="Cổng quản lý đồ án khoa Công Nghệ Thông Tin, triển khai thực hiện đồ án năm học 2019 - 2020">
+  <meta property="og:site_name" content="ithutech.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:image" content="https://raw.githubusercontent.com/ithutech/doan/master/images/intro-ithutech.png">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="335">
+  <meta property="og:image:alt" content="Cổng quản lý đồ án khoa Công Nghệ Thông Tin, triển khai thực hiện đồ án năm học 2019 - 2020">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+
+  <link rel="stylesheet" href="../tui-editor/src/css/tuidoc-editor-style.css">
+  <!-- Editor's Dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <!-- Editor's Extension Dependencies -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/tui.chart/v3.7.0/tui-chart.css">
+  <link rel="stylesheet" href="https://uicdn.toast.com/tui-color-picker/v2.2.1/tui-color-picker.css">
+  <!-- Editor -->
+  <link rel="stylesheet" href="../tui-editor/dist/tui-editor.css">
+  <link rel="stylesheet" href="../tui-editor/dist/tui-editor-contents.css">
+
+
+  <link rel="stylesheet" href="./main_mb.css">
+  <link rel="stylesheet" href="./tab_mb.css">
+  <link rel="stylesheet" href="./responsive_mb.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+  <script src="./js/popup.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/tab_mb.css">
+
+  <script type="text/javascript">
+  if (screen.width > 768) {
+  location.href = "https://ithutech.github.io/doan/";
+  }
+  </script>
+
+<body id="main-load">
+  <div class="loader loader-dot is-hidden">
+    <div class="loading">
+      <div class="a" style="--n: 5;">
+        <div class="dot_lhie" style="--i: 0;"></div>
+        <div class="dot_lhie" style="--i: 1;"></div>
+        <div class="dot_lhie" style="--i: 2;"></div>
+        <div class="dot_lhie" style="--i: 3;"></div>
+        <div class="dot_lhie" style="--i: 4;"></div>
+      </div>
+    </div>
+  </div>
+  <header class="wrapper-header" id="header-scroll" >
+    <nav role="navigation">
+      <span id="name-after">Hi user!<b style="color: #fff89e;float:right;">IT HUTECH</b></span>
+      <div id="menuToggle">
+        <input id="cb-close" type="checkbox">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <li><i class="fas fa-home"></i><a href="#">&nbsp;Trang Chủ</a></li>
+          <li class="login ope-log"><i class="fas fa-sign-in-alt"></i><a href="#">&nbsp;Đăng nhập</a></li>
+
+
+          <li><i class="far fa-question-circle"></i><a href="#">&nbsp;Hỏi đáp</a></li>
+          <li><i class="far fa-comments"></i><a href="#">&nbsp;Gửi thư/ Góp ý</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="login" class="overlay clearfix" style="display: none; opacity: 0;">
+      <!-- Header login form ithutech -->
+      <div class="popup-login">
+        <h2>thông tin đăng nhập</h2>
+        <a href="#" class="close">×</a>
+        <div class="ih columns">
+          <ul class="tab-login">
+            <li>
+              <a class="button active" href="#tab-login">Sinh viên/Giảng viên</a>
+            </li>
+            <li>
+              <a class="button" href="#tab-guide">Hướng Dẫn Đăng Nhập</a>
+            </li>
+          </ul>
+          <div class="tab-content-login">
+            <div class="tab-access-login active" id="tab-login">
+              <div class="form-box">
+                <form name="loginForm" onsubmit="return false;">
+                  <fieldset class="fieldset-form">
+                    <div class="input-group">
+                      <input id="fill-user" type="text" class="form-control" value="" required="">
+                      <span class="highlight"></span>
+                      <span class="bar-transition"></span>
+                      <label>Nhập Thông Tin Tài Khoản</label>
+                    </div>
+                    <div class="input-group">
+                      <input id="fill-secret" type="password" class="form-control" value="" required="">
+                      <span class="highlight"></span>
+                      <span class="bar-transition"></span>
+                      <label>Nhập Mật khẩu Cá Nhân</label>
+                    </div>
+                    <div class="input-group">
+
+                      <input id="submitLogin" type="submit" class="login" value="ĐĂNG NHẬP">
+                      <div class="lg-oad loading is-hidden"><i class="fas fa-spinner fa-pulse"></i></div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+            <div class="tab-access-login" id="tab-guide">
+              <div class="gui-box">
+                <div class="gui">
+                  <p>Sinh viên sử dụng tài khoản: MSSV - Mật khẩu đã được cấp</p>
+                </div>
+                <div class="gui">
+                  <p>Giảng viên sử dụng tài khoản: EMAIL - Mật khẩu đã được cấp</p>
+                </div>
+              </div>
+            </div>
+            <div style="clear:both; width: 100%;height: 20px; "><a href="#" style="float:right">&gt;&gt;&gt;&gt; Cán Bộ/Khoa</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="main-wrapper">
+    <!-- Header menu -->
+
+    <section id="app-main" class="clearfix">
+      <div class="ithutech-mobile-thongbao">
+
+        <aside class="bar-info clearfix ">
+          <div class="info-no left-f">
+            <div class="info-no-title u">
+              <p style="text-align:center"><strong>thông báo</strong></p>
+            </div>
+            <div class="info-no-details">
+              <h2 class="title-no-news" style="text-align: center;">LƯU Ý: ĐỖI MẬT KHẨU SAU LẦN ĐĂNG NHẬP LẦN ĐẦU</h2>
+              <p class="text">Tất cả sinh viên thay đổi mật khẩu cá nhân cho lần đăng nhập lần đầu
+                <br>Tra cứu thông tin giảng viên hướng dẫn </p>
+              <p></p>
+
+            </div>
+          </div>
+
+        </aside>
+      </div>
+      <div class="ithutech-row">
+        <div class="ithutech-thongbao">
+          <article class="introduc ">
+            <div id="content_news">
+
+
+
+              <div><span style="font-size:16px"><strong>1.&nbsp;Thời gian thực hiện:</strong></span></div>
+
+              <ul class="text-transform-none">
+                <li style="text-align:justify"><span style="font-size:14px;">Đăng ký từ ngày ra thông báo đến hết ngày 15/02/2020 </span>
+
+                </li>
+                <li style="text-align:justify"><span style="font-size:14px">Thời gian thực hiện đồ án đến hết ngày: <strong><em>30/05/2020</em></strong></span></li>
+                <li style="text-align:justify"><span style="font-size:14px">Thời gian nộp báo cáo và poster đề tài: Từ 01/06 – 05/06/2020 (từ 07h30-19h30)</span></li>
+                <li style="text-align:justify"><span style="font-size:14px">Thời gian báo cáo trước hội đồng: Từ <strong><em>13/06-20/06/2020</em></strong></span></li>
+              </ul>
+
+              <div><span style="font-size:16px"><strong>2.&nbsp;Giảng viên hướng dẫn</strong></span></div>
+
+              <ul class="text-transform-none">
+                <li style="text-align:justify">GVHD Đồ án chuyên ngành là GVHD Đồ án cơ sở.
+                </li>
+                <li style="text-align:justify">GVHD Đồ án tổng hợp ngành là GVHD Đồ án chuyên ngành.
+                </li>
+                <li style="text-align:justify">Tuy nhiên đã có thay đổi một số GVHD do thầy cô chuyển công tác hoặc tạm ngưng công tác.
+                </li>
+              </ul>
+
+              <div style="text-align:justify"><strong>3. Thực hiện các mẫu biểu trong quá trình thực tập tốt nghiệp</strong>
+              </div>
+
+              <div><span style="font-size:14px">Các mẫu biểu thực hiện Đồ án: <a href="https://www.hutech.edu.vn/khoacntt/sinh-vien/bieu-mau"><em>https://www.hutech.edu.vn/khoacntt/sinh-vien/bieu-mau</em></a>
+
+                </span>
+              </div>
+            </div>
+
+          </article>
+
+
+
+
+  </div>  </div>
+
+
+    </section>
+  </main>
+  <footer class="footer copywrite clearfix">
+    <div class="ithutech-row">
+      <div style="width: 100%;background-color:var(--blue);"><div style="line-height: 16px"><p style="color:white; padding: 12px 0"><strong style="color:white;">KHOA CÔNG NGHỆ THÔNG TIN - HUTECH</strong><br>
+      Trụ sở: 475A Điện Biên Phủ, P.25, Q.Bình Thạnh, TP.HCM<br>ĐT: (028) 3 5120 791 - Email: khoa.cntt@hutech.edu.vn</p>
+      <p style="color:white; padding: 12px 0"><strong style="color:white;">HỔ TRỢ, BÁO LỖI</strong><br>Email: khoa.cntt@hutech.edu.vn<br></p></div>
+
+          </div>
+    </div>
+  </footer>
+  <div id="widget-script">
+
+  </div>
+  <script src="./js/cooEsULmDDphHMkie.js" type="text/javascript"></script>
+  <script src="./js/main.js" type="text/javascript"></script>
+  <script src="./js/popup.js" type="text/javascript"></script>
+
+  <script src="../tui-editor/dist/tui-editor-Editor-full.min.js"></script>
+
+</body>
+
+</html>
