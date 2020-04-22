@@ -1203,7 +1203,7 @@ input.btn-white-input {
 }
 .disabled {
     opacity: 0.5;
-    pointer-events: none;
+    pointer-events: none;user-select: none;
 }
 .dot_ldcontent, .dot_ldcontent:after {
     display: inline-block;
@@ -1662,3 +1662,53 @@ button.btnfly.clicked svg path {
 .fix-height-auto {
     max-height: none !important;
 }
+
+/* 20/04/2020 ---------------------------------- */
+  /* CSS Table File */
+
+table{border-collapse:collapse;border-spacing:0;}
+td,th{padding:0;}
+table{background-color:transparent;}
+th{text-align:left;}
+.table{width:100%;max-width:100%;margin-bottom:24px;}
+.table > thead > tr > th,.table > tbody > tr > td{padding:10px 8px;line-height:1.846153846;vertical-align:top;border-top:1px solid rgba(189, 193, 193, 0.2);}
+.table > thead > tr > th{vertical-align:bottom;border-bottom:2px solid rgba(189, 193, 193, 0.2);}
+.table > thead:first-child > tr:first-child > th{border-top:0;}
+.table-responsive{overflow-x:auto;min-height:0.01%;}
+@media screen and (max-width: 768px){
+.table-responsive{width:100%;margin-bottom:18px;overflow-y:hidden;-ms-overflow-style:-ms-autohiding-scrollbar;border:1px solid rgba(189, 193, 193, 0.2);}
+.table-responsive > .table{margin-bottom:0;}
+.table-responsive > .table > thead > tr > th,.table-responsive > .table > tbody > tr > td{white-space:nowrap;}
+}
+.table > thead > tr > th,.table > tbody > tr > td{vertical-align:baseline;}
+.table thead{opacity:0.75;}
+.table thead > tr > th{color:inherit;font-weight:500;}
+.card-body{padding: 24px 0;position:relative;}
+.card-body:before,.card-body:after{content:" ";display:table;}
+.card-body:after{clear:both;}
+.card-body:last-child{border-radius:0 0 2px 2px;}
+
+/* CSS Upload File */
+.file-upload{width: 80%;float: left;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+
+
+/* CSS Custome Form & Theme NEW Table 22/04/2020 */
+input#formajax { cursor: pointer; background-color: #dce4ec; margin-left: 12px; border: none; padding: 13px 41px; }
+.form-upload {width: 20%;float: left;}
+a#privacy span::after {content: '( MỚI )';position: relative;right: -5px;color: red;font-weight: bold;font-size: 17px;}
+td.limitedc { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.btn-success { border: none; padding: 7px; background-color: #44cb44; color: white; border-radius: 4px; cursor: pointer; }
+.deactive { background-color: #f75555; color: white; padding: 7px; border-radius: 5px; }
+td.td-center {text-align: center;}
