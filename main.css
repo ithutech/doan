@@ -1710,5 +1710,27 @@ input#formajax { cursor: pointer; background-color: #dce4ec; margin-left: 12px; 
 a#privacy span::after {content: '( MỚI )';position: relative;right: -5px;color: red;font-weight: bold;font-size: 17px;}
 td.limitedc { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .btn-success { border: none; padding: 7px; background-color: #44cb44; color: white; border-radius: 4px; cursor: pointer; }
-.deactive { background-color: #f75555; color: white; padding: 7px; border-radius: 5px; }
+.deactive { background-color: #f75555; color: white; padding: 7px; border-radius: 5px; pointer-events: none;}
 td.td-center {text-align: center;}
+
+/* Loading upload form */
+
+.primary-color-dark{background-color:#0d47a1!important;}
+:disabled{pointer-events:none!important;}
+.md-progress{position:relative;display:block;width:100%;height:.25rem;margin-bottom:1rem;overflow:hidden;background-color:#eee;-webkit-box-shadow:none;box-shadow:none;}
+.md-progress .indeterminate{background-color:#90caf9;}
+.md-progress .indeterminate:before{position:absolute;top:0;bottom:0;left:0;content:"";background-color:inherit;-webkit-animation:indeterminate 2.1s cubic-bezier(0.65,0.815,0.735,0.395) infinite;animation:indeterminate 2.1s cubic-bezier(0.65,0.815,0.735,0.395) infinite;will-change:left,right;}
+.md-progress .indeterminate:after{position:absolute;top:0;bottom:0;left:0;content:"";background-color:inherit;-webkit-animation:indeterminate 2.1s cubic-bezier(0.165,0.84,0.44,1) infinite;animation:indeterminate 2.1s cubic-bezier(0.165,0.84,0.44,1) infinite;-webkit-animation-delay:1.15s;animation-delay:1.15s;will-change:left,right;}
+}
+/*! CSS Used from: Embedded */
+.documentation .section-preview{border:1px solid #e0e0e0;padding:15px;}
+/*! CSS Used keyframes */
+@-webkit-keyframes indeterminate{0%{right:100%;left:-35%;}60%{right:-90%;left:100%;}100%{right:-90%;left:100%;}}
+@keyframes indeterminate{0%{right:100%;left:-35%;}60%{right:-90%;left:100%;}100%{right:-90%;left:100%;}}
+
+.process-uploading {
+    position: relative;
+    top: 1px;
+}
+
+
