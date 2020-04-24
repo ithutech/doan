@@ -23,10 +23,6 @@ ul{padding-left:0;margin-top:0;margin-bottom:0;}
 .col-md-3{width:25%;}
 .col-md-9{width:75%;}
 }
-@media (min-width:1012px){
-.col-lg-2{width:16.66667%;}
-.col-lg-10{width:83.33333%;}
-}
 .subnav{margin-bottom:20px;}
 .subnav:after,.subnav:before{display:table;content:"";}
 .subnav:after{clear:both;}
