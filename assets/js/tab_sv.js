@@ -59,6 +59,7 @@ $('nav a').click(function(e) {
   else if (this.id === 'studentDocument') {
     $('.studentDocument').removeClass('noshow');
     $('.rightbox').children().not('.studentDocument').addClass('noshow');
+    sv_viewFiles();
   }
 });
 
@@ -340,6 +341,79 @@ function article_studentNotif() {
       $(".downloading").html("");
 
   });
+}
+
+// Sinh viên xem file thầy/cô đã chia sẻ
+function sv_viewFiles(){
+document.querySelector('.process-uploading').classList.remove("hidden");
+var url = "https://script.google.com/macros/s/AKfycbyx-g1oJY3FKsFXZNIZY7WkSmHH82VpY1bjs8VzO_oorzdLz9M/exec?" + getCoo56yhjkk() + "&action=sv_viewFiles";
+
+
+var entryTag = '<div class="release-entry"><div class="release pt-2 pt-md-0 pb-3 pb-md-0 clearfix label-latest">';
+// </div>
+var leftTag_Header = '<div class="d-none d-md-block flex-wrap flex-items-center col-12 col-md-3 col-lg-2 px-md-3 pb-1 pb-md-4 pt-md-4 float-left text-md-right v-align-top">';
+// </div>
+var leftTag_Date = '<div class="flex-auto flex-self-start"> <span class="flex-shrink-0 Label Label--outline mb-md-2 mr-2 mr-md-0 Label--outline-green"> <span class="border-0 Label--outline-green" href="#">';
+//</span> </span> </div>
+var leftTag_Name = '<ul class="d-none d-md-block mt-2 list-style-none"> <li class="d-block mb-1"> <svg class="octicon octicon-tag" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"> <path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z"> </path> </svg> <span class="css-truncate-target" style="max-width: 125px">';
+//</span> </li> </ul>
+
+var rightTag_Header = '<div class="col-12 col-md-9 col-lg-10 px-md-3 py-md-4 release-main-section commit open float-left">';
+//</div>
+var rightTag_ReaHeader = '<div class="release-header">';
+//</div>
+var rightTag_RH_name = '<div class="d-flex flex-items-start"> <div class="f1 flex-auto min-width-0 text-normal"> <h2 style="font-size: 20px; padding-bottom: 5px;">';
+//</a> </div> </div>
+
+var rightTag_RH_info = '<p class="f5 text-gray mt-2 mt-md-1 mb-2 mb-md-4"> <img class="avatar" src="https://img.icons8.com/wired/64/000000/human-head.png" width="20" height="20"> <span class="text-bold text-gray">Giảng viên hướng dẫn của bạn</span> Đã đăng tải vào ngày <relative-time class="no-wrap">';
+
+//</relative-time> </p>
+
+var rightTag_entry_content = '<div class="markdown-body" id="entry_release_content">';
+
+var rightTag_detail_file = '<details class="details-reset Details-element border-top pt-3 mt-4 mb-2 mb-md-4" open=""> <summary> <div class="d-flex flex-items-center"> <span class="mr-2 Details-content--closed"><svg class="octicon octicon-triangle-right" viewBox="0 0 6 16" version="1.1" width="6" height="16" aria-hidden="true"> <path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"></path> </svg></span> <span class="mr-2 Details-content--open"><svg class="octicon octicon-triangle-down" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"> <path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path> </svg></span> <span class="text-bold">File đính kèm</span> </div> </summary>';
+
+var rightTag_view_file = '<div class="Box Box--condensed mt-3">';
+// </div>
+
+var fileview = '<div class="d-block py-1 py-md-2 Box-body px-2">';
+
+//</div>
+var svg_icon = '<svg class="octicon octicon-file-zip flex-shrink-0 text-gray" width="16" height="16" viewBox="0 0 12 16" version="1.1" aria-hidden="true"> <path fill-rule="evenodd" d="M8.5 1H1a1 1 0 00-1 1v12a1 1 0 001 1h10a1 1 0 001-1V4.5L8.5 1zM11 14H1V2h3v1h1V2h3l3 3v9zM5 4V3h1v1H5zM4 4h1v1H4V4zm1 2V5h1v1H5zM4 6h1v1H4V6zm1 2V7h1v1H5zM4 9.28A2 2 0 003 11v1h4v-1a2 2 0 00-2-2V8H4v1.28zM6 10v1H4v-1h2z"> </path> </svg>';
+var file_description = "";
+var entry_description = [], markd_e_dc =[];
+$.getJSON(url, function(data) {
+  // var result = "";
+
+  var fileContent = "", fileid = "";
+  $.each(data.lookup, function(key, val) { fileid = val.fileid;
+     fileContent += entryTag + leftTag_Header + leftTag_Date + val.timerelease+ '</span> </span> </div>';
+     fileContent += leftTag_Name + val.fileid + '</span> </li> </ul></div>';
+     fileContent += rightTag_Header + rightTag_ReaHeader + rightTag_RH_name + val.contenttitle + '</h2> </div> </div>';
+     fileContent += rightTag_RH_info + val.timerelease + '</relative-time> </p></div>';
+     entry_description.push(val.fileid);
+     markd_e_dc.push(val.contentrelease);
+     fileContent += '<div class="markdown-body entry_description_'+val.fileid+'"></div>';
+     fileContent += rightTag_detail_file + rightTag_view_file + fileview;
+     fileContent += '<a href="'+val.fileurl+'" rel="nofollow" class="d-flex flex-items-center" target="_blank">' + svg_icon + '<span class="px-1 text-bold">'+val.filename+'</span> (Xem File .DOCX, .PDF, .TXT, ...)</a></div>';
+     fileContent += fileview + '<a href="'+val.filedownload+'" rel="nofollow" class="d-flex flex-items-center">' + svg_icon + '<span class="px-1 text-bold">'+val.filename+'</span> (Tải Xuống)</a></div>'
+
+     // Endtag
+     fileContent += '</div></div></div>';
+  });
+if(fileid == null ||fileid == "") return $("#filePostContent").html('<h2 class="error"><strong>Lỗi 404: </strong>Không tìm thấy thông tin</h2>');
+
+$("#filePostContent").html(fileContent);
+ for(var i =  0; i < entry_description.length; i++)
+ {
+   tui.Editor.factory({
+         el: document.querySelector('.entry_description_'+entry_description[i]),
+         viewer: true,
+         initialValue: markd_e_dc[i]
+       });
+ }document.querySelector('.process-uploading').classList.add("hidden");
+});
+
 }
 
 
