@@ -56,6 +56,10 @@ $('nav a').click(function(e) {
     $('.studentRegister').removeClass('noshow');
     $('.rightbox').children().not('.studentRegister').addClass('noshow');
   }
+  else if (this.id === 'studentDocument') {
+    $('.studentDocument').removeClass('noshow');
+    $('.rightbox').children().not('.studentDocument').addClass('noshow');
+  }
 });
 
 // Message
