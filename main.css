@@ -1707,7 +1707,7 @@ th{text-align:left;}
 /* CSS Custome Form & Theme NEW Table 22/04/2020 */
 input#formajax { cursor: pointer; background-color: #dce4ec; margin-left: 12px; border: none; padding: 13px 41px; }
 .form-upload {width: 20%;float: left;}
-a#privacy span::after {content: '( MỚI )';position: relative;right: -5px;color: red;font-weight: bold;font-size: 17px;}
+.new::after {content: '( MỚI )';position: relative;right: -5px;color: red;font-weight: bold;font-size: 17px;}
 td.limitedc { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .btn-success { border: none; padding: 7px; background-color: #44cb44; color: white; border-radius: 4px; cursor: pointer; }
 .deactive { background-color: #f75555; color: white; padding: 7px; border-radius: 5px; pointer-events: none;}
