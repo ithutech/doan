@@ -142,4 +142,4 @@ p{page-break-inside:avoid;}
 }
 span.css-truncate-target{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;max-width:125px;vertical-align:top;}
 .error { color: #a43636; padding: 16px 16px; margin-top: 20px; background-color: #F2DEDE; }
-
+.process-uploading.tab-sv { top: -1px; }
