@@ -401,8 +401,11 @@ $.getJSON(url, function(data) {
      // Endtag
      fileContent += '</div></div></div>';
   });
-if(fileid == null ||fileid == "") return $("#filePostContent").html('<h2 class="error"><strong>Lỗi 404: </strong>Không tìm thấy thông tin</h2>');
-
+if(fileid == null ||fileid == "")
+{
+  document.querySelector('.process-uploading').classList.add("hidden");
+  return $("#filePostContent").html('<h2 class="error"><strong>Lỗi 404: </strong>Không tìm thấy thông tin</h2>');
+}
 $("#filePostContent").html(fileContent);
  for(var i =  0; i < entry_description.length; i++)
  {
