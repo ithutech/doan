@@ -353,3 +353,8 @@ $("#approved_detai").click(function(event) {
     }, 3000);
   });
 });
+
+function shareFile(nameFile, idFile){
+    $(".modelDetails").css("display", "block")[0];
+    $("#edFileName").val(nameFile);
+}
