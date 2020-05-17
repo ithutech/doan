@@ -357,4 +357,28 @@ $("#approved_detai").click(function(event) {
 function shareFile(idFile, nameFile){
     $(".modelDetails").css("display", "block")[0];
     $("#edFileName").val(nameFile);
+    $("#idFile").val(idFile);
 }
+$("#shareFile").click(function(event){
+  var descFile = fileContent.getValue();
+  var idFile = $("#idFile").getValue();
+  var titleFile = $("#edFileName").getValue();
+
+  var formData = new FormData();
+      formData.append("idFile", idFile);
+      formData.append("titleFile", titleFile);
+      formData.append("descFile", descFile );
+
+      var url = "https://script.google.com/macros/s/AKfycbyx-g1oJY3FKsFXZNIZY7WkSmHH82VpY1bjs8VzO_oorzdLz9M/exec?request=ShareFile";
+      $.ajax({
+          type: "post",
+          url: url,
+          data: formData, // serializes the form's elements.
+          contentType: false,
+          processData: false,
+          success: function(data) {
+              return alert(data.result); // show response from the GAS script.
+          }
+      });
+}
+
