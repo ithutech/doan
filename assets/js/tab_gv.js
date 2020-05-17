@@ -380,5 +380,5 @@ $("#shareFile").click(function(event){
               return alert(data.result); // show response from the GAS script.
           }
       });
-}
+});
 
