@@ -354,7 +354,7 @@ $("#approved_detai").click(function(event) {
   });
 });
 
-function shareFile(nameFile, idFile){
+function shareFile(idFile, nameFile){
     $(".modelDetails").css("display", "block")[0];
     $("#edFileName").val(nameFile);
 }
