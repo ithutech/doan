@@ -361,8 +361,8 @@ function shareFile(idFile, nameFile){
 }
 $("#shareFile").click(function(event){
   var descFile = fileContent.getValue();
-  var idFile = $("#idFile").getValue();
-  var titleFile = $("#edFileName").getValue();
+  var idFile = $("#idFile").val();
+  var titleFile = $("#edFileName").val();
 
   var formData = new FormData();
       formData.append("idFile", idFile);
