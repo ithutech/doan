@@ -424,4 +424,27 @@ $("#filePostContent").html(fileContent);
 
 }
 
+// Report for student `var content = editor.getValue();`
+$("#submitREPORTTT").click(function(event) {
+  
+  var contenttt = tteditor.getValue();
+  if (contenttt.length == "" || contenttt.length <= 20)
+    return alert('Bài báo cáo quá ngắn hoặc bạn chưa nhập nội dung');
+    document.querySelector(".form-input-absoluted .loading-change-report").classList.remove("is-hidden");
 
+  $.ajax({
+    url: "https://script.google.com/macros/s/AKfycbzYPTjObWfAe0sBQrCCjPN1FjYxdJ1Vp178WIN5rrnUeRlzw4ft/exec?request=stReportTT&" + getCoo56yhjkk(),
+    type: "post",
+    data: {
+     
+      "content_rptt": contenttt,
+    },
+    jsonp: "callback",
+    success: function(response) {
+          document.querySelector(".form-input-absoluted .loading-change-report").classList.add("is-hidden");
+
+      alert(response.result);
+
+    }
+  });
+})
