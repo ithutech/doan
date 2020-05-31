@@ -31,7 +31,12 @@ $('nav a').click(function(e) {
     $('.studentReport').removeClass('noshow');
     $('.rightbox').children().not('.studentReport').addClass('noshow');
 
-  } else if (this.id === 'studentViewRp') {
+  }else if (this.id === 'studentReportTT') {
+    $('.studentReportTT').removeClass('noshow');
+    $('.rightbox').children().not('.studentReportTT').addClass('noshow');
+
+  }
+  else if (this.id === 'studentViewRp') {
     $('.studentViewRp').removeClass('noshow');
     $('.rightbox').children().not('.studentViewRp').addClass('noshow');
     studentViewRp_();
