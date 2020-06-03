@@ -121,6 +121,29 @@ function yourlecturer_() {
     $(".yourlecturer").html(strText);
 
   });
+  
+  
+  var urltt = APIurl + getCoo56yhjkk() + "&action=stLookupTT";
+
+  $.getJSON(urltt, function(data) {
+    var strTextTT = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith"> MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith"> Email </div> <div class="cell_ith"> Ngày sinh </div> <div class="cell_ith"> Phone SV </div> <div class="cell_ith"> Mã lớp </div> <div class="cell_ith"> Họ tên GVHD </div><div class="cell_ith"> Email GVHD </div><div class="cell_ith"> Phone GVHD </div> </div>';
+    $.each(data.lookup, function(key, val) {
+      strTextTT += '<div class="row_ith">' + '<div class="cell_ith">' + val["sv-masv"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["sv-hoten"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["sv-email"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["sv-birth"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["sv-sdt"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["sv-malop"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["gv-hoten"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["gv-email"] + '</div>';
+      strTextTT += '<div class="cell_ith">' + val["gv-sdt"] + '</div></div>';
+
+    });
+    strTextTT += "</div>";
+    $("#gvhdtt").html(strTextTT);
+
+  });
+
 }
 
 $(".yourlecturer").ready(function() {
@@ -448,3 +471,5 @@ $("#submitREPORTTT").click(function(event) {
     }
   });
 })
+
+
