@@ -108,6 +108,28 @@ function yourlecturer_() {
     $(".yourlecturer").html(strText);
 
   });
+  
+  var urltt = APIurl + getCoo56yhjkk() + "&action=stLookupTT";
+
+  $.getJSON(urltt, function(data) {
+    var strTextTT = '<div class="title"> <h2 style="text-align:center;padding-top:10px;color:red">Thông tin giảng viên hướng dẫn thực tập</h2> </div><table class="table-ithutech">';
+    $.each(data.lookup, function(key, val) {
+      strTextTT += '<tr><th>MSSV: </th>' + '<td>'+ val["sv-masv"] + '</td>';
+      strTextTT += '<tr><th>Họ và tên: </th>' + '<td>'+ val["sv-hoten"] + '</td>';
+      strTextTT += '<tr><th>Email: </th>' + '<td>'+ val["sv-email"] + '</td>';
+      strTextTT += '<tr><th>Ngày sinh: </th>' + '<td>'+ val["sv-birth"] + '</td>';
+      strTextTT += '<tr><th>Số điện thoại: </th>' + '<td>'+ val["sv-sdt"] + '</td>';
+      strTextTT += '<tr><th>Mã lớp: </th>' + '<td>'+ val["sv-malop"] + '</td>';
+      strTextTT += '<tr><th>Họ và tên GVHD: </th>' + '<td>'+ val["gv-hoten"] + '</td>';
+      strTextTT += '<tr><th>Email GVHD: </th>' + '<td>'+ val["gv-email"] + '</td>';
+      strTextTT += '<tr><th>SĐT GVHD: </th>' + '<td>'+ val["gv-sdt"] + '</td>';
+
+
+    });
+    strTextTT += "</table>";
+    $(".yourlecturerTT").html(strTextTT);
+
+  });
 
 }
 
