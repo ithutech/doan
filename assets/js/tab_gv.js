@@ -365,11 +365,11 @@ $("#shareFile").click(function(event){
   var titleFile = $("#edFileName").val();
 
   var formData = new FormData();
-      formData.append("idFile", idFile);
-      formData.append("titleFile", titleFile);
-      formData.append("descFile", descFile );
+      formData.append("fileid", idFile);
+      formData.append("filename", titleFile);
+      formData.append("filedesc", descFile );
 
-      var url = "https://script.google.com/macros/s/AKfycbyx-g1oJY3FKsFXZNIZY7WkSmHH82VpY1bjs8VzO_oorzdLz9M/exec?request=ShareFile";
+      var url = "https://script.google.com/macros/s/AKfycbyx-g1oJY3FKsFXZNIZY7WkSmHH82VpY1bjs8VzO_oorzdLz9M/exec?request=gv_shareFiles";
       $.ajax({
           type: "post",
           url: url,
@@ -378,6 +378,7 @@ $("#shareFile").click(function(event){
           processData: false,
           success: function(data) {
               return alert(data.result); // show response from the GAS script.
+            $('.modelDetails').css("display", "none");
           }
       });
 });
