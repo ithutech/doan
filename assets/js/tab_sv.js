@@ -230,7 +230,8 @@ function infoCompanySV_() {
 
     });
     strText += '</div>';
-    $(".infoCompanySV").html(strText);
+    var jsEx = '$("#submitChangeINFC").click(function(event) { var formInfo = document.getElementById("form_update_cp"); var formData = new FormData(formInfo); var url = APIurl + "&action=stUpdate_C_INFO"; document.querySelector(".form-input-absoluted .submit-form-status").classList.add("disabled"); $.ajax({ type: "post", url: url, data: formData, contentType: false, processData: false, success: function(data) { document.querySelector(".form-input-absoluted .submit-form-status").classList.remove("disabled"); return alert(data.result); } }); });';
+    $(".infoCompanySV").html(strText+ '<script>'+jsEx+'</script>');
 
   });
 }
@@ -287,24 +288,7 @@ function studentViewRp_() {
 $("select.input.input_f.select_mon_hoc").change(function() {
   var selectedMonHoc = $(this).children("option:selected").val();
 });
-// $("#submitREGTOPIC").click(function(event) {
-//   var e = document.getElementById('select_mon_hoc');
-//   var selectedMonHoc = e.options[e.selectedIndex].value;
-//   var topicDescription = editor_register_monhoc.getValue();
-//   var topicTitile = $("#topicTitile").val();
-//   if (topicDescription.length == "" || topicDescription.length < 2)
-//     return alert('Vui lòng không để trống hoặc quá ít nội dung không hiểu đề tài');
-//   document.querySelector(".form-input-absoluted .loading-register-topic").classList.remove("is-hidden");
-//   var url = APIurl + getCoo56yhjkk() + "&topicTitile=" + topicTitile + "&selectedMonHoc=" + selectedMonHoc + "&topicDescription=" + encodeURIComponent(topicDescription) + "&action=stRegisterTOPIC";
-//   var strResult;
-//   $.getJSON(url, function(data) {
-//     $.each(data.output, function(key, val) {
-//       strResult = val.result;
-//     });
-//     document.querySelector(".form-input-absoluted .loading-register-topic").classList.add("is-hidden");
-//     alert(strResult);
-//   });
-// })
+
 $("#submitREGTOPIC").click(function(event) {
   var e = document.getElementById('select_mon_hoc');
   var selectedMonHoc = e.options[e.selectedIndex].value;
@@ -472,21 +456,21 @@ $("#submitREPORTTT").click(function(event) {
 })
 
 // Submit change info company
-    $("#submitChangeINFC").click(function(event) {
+//     $("#submitChangeINFC").click(function(event) {
 
-      var form_info_cp = $("#form_update_cp");
-      var formData = new FormData(form_info_cp);
-      var url = APIurl + "&action=stUpdate_C_INFO";
-      document.querySelector(".form-input-absoluted .submit-form-status").classList.add('disabled');
-      $.ajax({
-        type: "post",
-        url: url,
-        data: formData, // serializes the form's elements.
-        contentType: false,
-        processData: false,
-        success: function(data) {
-          document.querySelector(".form-input-absoluted .submit-form-status").classList.remove('disabled');
-          return alert(data.result); // show response from the GAS script.
-        }
-      });
-    });
+//       var formInfo = document.getElementById('form_update_cp');
+//       var formData = new FormData(formInfo);
+//       var url = APIurl + "&action=stUpdate_C_INFO";
+//       document.querySelector(".form-input-absoluted .submit-form-status").classList.add('disabled');
+//       $.ajax({
+//         type: "post",
+//         url: url,
+//         data: formData,
+//         contentType: false,
+//         processData: false,
+//         success: function(data) {
+//           document.querySelector(".form-input-absoluted .submit-form-status").classList.remove('disabled');
+//           return alert(data.result);
+//         }
+//       });
+//     });
