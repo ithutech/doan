@@ -134,18 +134,18 @@ function studentManager_() {
     $("span#total_stduent").html(data.extension.tongDSHD);
   });
   
-    var urltt = APIurl + getCoo56yhjkk() + "&action=ltCTLookup";
+  var urltt = APIurl + getCoo56yhjkk() + "&action=ltCTLookup";
+
   $.getJSON(urltt, function(data) {
-    var tt= '<div class="divTable"> <div class="divHeading"> <div class="cell_ith"> MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith"> Email </div> <div class="cell_ith"> Số điện thoại </div> <div class="cell_ith"> Mã lớp </div> <div class="cell_ith"> Tên môn học </div> <div class="cell_ith"> Công ty thực tập </div> </div>';
+    var tt = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith"> MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith"> Email </div> <div class="cell_ith"> Mã lớp </div> <div class="cell_ith"> Tên môn học </div> <div class="cell_ith"> Công ty thực tập </div><div class="cell_ith"> Công cụ </div> </div>';
     $.each(data.lookup, function(key, val) {
       tt += '<div class="row_ith">' + '<div class="cell_ith">' + val["sv-masv"] + '</div>';
       tt += '<div class="cell_ith">' + val["sv-hoten"] + '</div>';
-      tt += '<div class="cell_ith">' + val["sv-email"] + '</div>';
-      tt += '<div class="cell_ith">' + val["sv-sdt"] + '</div>';
-     
+      tt += '<div class="cell_ith">' + 'E: '+val["sv-email"] +'<br />P: '+val["sv-sdt"]+ '</div>';
       tt += '<div class="cell_ith">' + val["sv-malop"] + '</div>';
       tt += '<div class="cell_ith">' + val["sv-tenmonhoc"] + '</div>';
-      tt += '<div class="cell_ith">' + val["sv-congtythuctap"] + "</div></div>";
+      tt += '<div class="cell_ith">' + val["sv-congtythuctap"] + "</div>";
+      tt += '<div class="cell_ith">' + 'UPDATE' + "</div></div>";
     });
     tt += "</div>";
     $(".studentAllTT").html(tt);
