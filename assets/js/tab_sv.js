@@ -210,7 +210,7 @@ function infoCompanySV_() {
   var form = '<form id="form_update_cp" class="form-view col-2" onsubmit="return false;">';
   var row_ = '<div class="row-6">',
     finput = '<div class="form-input">',
-    fin_Abs = '<div class="form-input-absoluted"><div class="submit-form-status disabled">';
+    fin_Abs = '<div class="form-input-absoluted"><div class="submit-form-status">';
   var lbel = '<span class="label-input">',
     s_input_f = '</span> <input class="input input_f"';
   $.getJSON(url, function(data) {
