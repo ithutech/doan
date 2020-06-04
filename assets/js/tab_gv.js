@@ -400,4 +400,19 @@ $("#shareFile").click(function(event){
           }
       });
 });
+// Tab list Danh Sách Hướng Dẫn Sinh Viên
+$('.bar-proccess').click(function(e) {
+  e.preventDefault();
+  $('.bar-proccess').removeClass('active');
+  $(this).addClass('active');
+  if (this.id === ! 'showDshdsvda') {
+    $('.studentAll').addClass('noshow');
+  } else if (this.id === 'showDshdsvda') {
+    $('.studentAll').removeClass('noshow');
+$('.std').children().not('.studentAll').addClass('noshow');
+  }else if (this.id === 'showDshdsvtt') {
+    $('.studentAllTT').removeClass('noshow');
+    $('.std').children().not('.studentAllTT').addClass('noshow');
+}
 
+});
