@@ -105,6 +105,29 @@ function viewrp(mssv) {
   });
 }
 
+function viewrpTT(mssv) {
+  $(".modelDetails").css("display", "block");
+  $("#gv_xem_bao_caoTT").html(jsLD);
+  var url = APIurl +"&mssv=" + mssv + "&action=gv_xem_bao_caoTT";
+  $.getJSON(url, function(data) {
+    var mdContent = "",
+      strView = "<div class='view-content view-content-";
+    $.each(data.lookup, function(key, val) {
+      for (var i = 1; i <= val.sotuan; i++) {
+        var vrp = "vrp_" + i + "";var tuan = "tuan_" + i +"";
+        mdContent += "<div id='sheetsW" + i + "'><div class='title'>Tuần " + i + ": "+val[tuan]+" </div> \n\n";
+        mdContent += strView + i + "'>" + val[vrp] + "\n\n" + "</div></div>";
+      }
+    });
+    var editor = tui.Editor.factory({
+      el: document.querySelector('#gv_xem_bao_caoTT'),
+      viewer: true,
+      height: '500px',
+      initialValue: mdContent
+    });
+  });
+}
+
 $(document).ready(function() {
   $('.modelDetails-close').click(function(event) {
     $('.modelDetails').css("display", "none");
