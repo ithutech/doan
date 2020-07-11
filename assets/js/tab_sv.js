@@ -230,8 +230,7 @@ function infoCompanySV_() {
 
     });
     strText += '</div>';
-    var jsEx = 'var formInfo = document.getElementById("form_update_cp"); var em = $("input[name =\'manager_email\']").val(); var ws = $("input[name =\'website\']").val(); var mfn = $("input[name =\'manager_fullname\']").val(); var mphn = $("input[name =\'manager_phonenumber\']").val(); if(em == "" || ws == "" || mfn == "" || mphn == "") return alert("Vui lòng nhập đầy đủ thông tin | Nếu chưa có vui lòng ghi \'Chưa\'"); var formData = new FormData(formInfo); var url = APIurl +getCoo56yhjkk()+ "&request=stUpdate_C_INFO"; document.querySelector(".form-input-absoluted .submit-form-status").classList.add("disabled"); $.ajax({ type: "post", url: url, data: formData, contentType: false, processData: false, success: function(data) { document.querySelector(".form-input-absoluted .submit-form-status").classList.remove("disabled"); return alert(data.result); } });';
-    
+    var jsEx = '$("#submitChangeINFC").click(function(event) { var formInfo = document.getElementById("form_update_cp"); var formData = new FormData(formInfo); var url = APIurl + getCoo56yhjkk() + "&request=stUpdate_C_INFO"; document.querySelector(".form-input-absoluted .submit-form-status").classList.add("disabled"); $.ajax({ type: "post", url: url, data: formData, contentType: false, processData: false, success: function(data) { document.querySelector(".form-input-absoluted .submit-form-status").classList.remove("disabled"); return alert(data.result); } }); });';
     $(".infoCompanySV").html(strText+ '<script>'+jsEx+'</script>');
 
   });
