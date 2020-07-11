@@ -457,21 +457,21 @@ $("#submitREPORTTT").click(function(event) {
 })
 
 // Submit change info company
-//     $("#submitChangeINFC").click(function(event) {
+    $("#submitChangeINFC").click(function(event) {
 
-//       var formInfo = document.getElementById('form_update_cp');
-//       var formData = new FormData(formInfo);
-//       var url = APIurl + "&action=stUpdate_C_INFO";
-//       document.querySelector(".form-input-absoluted .submit-form-status").classList.add('disabled');
-//       $.ajax({
-//         type: "post",
-//         url: url,
-//         data: formData,
-//         contentType: false,
-//         processData: false,
-//         success: function(data) {
-//           document.querySelector(".form-input-absoluted .submit-form-status").classList.remove('disabled');
-//           return alert(data.result);
-//         }
-//       });
-//     });
+      var formInfo = document.getElementById('form_update_cp');
+      var formData = new FormData(formInfo);
+      var url = APIurl + getCoo56yhjkk() + "&request=stUpdate_C_INFO";
+      document.querySelector(".form-input-absoluted .submit-form-status").classList.add('disabled');
+      $.ajax({
+        type: "post",
+        url: url,
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+          document.querySelector(".form-input-absoluted .submit-form-status").classList.remove('disabled');
+          return alert(data.result);
+        }
+      });
+    });
