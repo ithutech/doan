@@ -168,7 +168,7 @@ function studentManager_() {
       tt += '<div class="cell_ith">' + val["sv-malop"] + '</div>';
       tt += '<div class="cell_ith">' + val["sv-tenmonhoc"] + '</div>';
       tt += '<div class="cell_ith">' + val["sv-congtythuctap"] + "</div>";
-      tt += '<div class="cell_ith">' + 'UPDATE' + "</div></div>";
+      tt += '<div class="cell_ith">'+ '<button class="btn-hutech more" onclick="viewrpTT('+val["sv-masv"]+')"><i class="fas fa-search"><span>&nbsp;REVIEW</span></i></button>'  + "</div></div>";
     });
     tt += "</div>";
     $(".studentAllTT").html(tt);
