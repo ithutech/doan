@@ -160,7 +160,7 @@ function studentManager_() {
   var urltt = APIurl + getCoo56yhjkk() + "&action=ltCTLookup";
 
   $.getJSON(urltt, function(data) {
-    var tt = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith"> MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith"> Email </div> <div class="cell_ith"> Mã lớp </div> <div class="cell_ith"> Tên môn học </div> <div class="cell_ith"> Công ty thực tập </div><div class="cell_ith"> Công cụ </div> </div>';
+    var tt = '<div class="divTable"> <div class="divHeading"> <div class="cell_ith"> MSSV </div> <div class="cell_ith">Họ và tên</div> <div class="cell_ith"> Email </div> <div class="cell_ith"> Mã lớp </div> <div class="cell_ith"> Công ty thực tập </div> <div class="cell_ith"> Tên người QL </div> <div class="cell_ith"> SDT người QL </div> <div class="cell_ith"> Email QL </div><div class="cell_ith"> Công cụ </div> </div>';
     $.each(data.lookup, function(key, val) {
       tt += '<div class="row_ith">' + '<div class="cell_ith">' + val["sv-masv"] + '</div>';
       tt += '<div class="cell_ith">' + val["sv-hoten"] + '</div>';
