@@ -166,8 +166,10 @@ function studentManager_() {
       tt += '<div class="cell_ith">' + val["sv-hoten"] + '</div>';
       tt += '<div class="cell_ith">' + 'E: '+val["sv-email"] +'<br />P: '+val["sv-sdt"]+ '</div>';
       tt += '<div class="cell_ith">' + val["sv-malop"] + '</div>';
-      tt += '<div class="cell_ith">' + val["sv-tenmonhoc"] + '</div>';
       tt += '<div class="cell_ith">' + val["sv-congtythuctap"] + "</div>";
+      tt += '<div class="cell_ith">' + val["sv-tenql"] + '</div>';
+       tt += '<div class="cell_ith">' + val["sv-sdtql"] + '</div>';
+      tt += '<div class="cell_ith">' + val["sv-mailql"] + '</div>';
       tt += '<div class="cell_ith">'+ '<button class="btn-hutech more" onclick="viewrpTT('+val["sv-masv"]+')"><i class="fas fa-search"><span>&nbsp;REVIEW</span></i></button>'  + "</div></div>";
     });
     tt += "</div>";
