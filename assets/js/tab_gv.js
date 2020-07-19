@@ -106,7 +106,7 @@ function viewrp(mssv) {
 }
 
 function viewrpTT(mssv) {
-  $(".modelDetailsTT").css("display", "block");
+  $(".modelDetails").css("display", "block");
   $("#gv_xem_bao_cao").html(jsLD);
   var url = APIurl +"&mssv=" + mssv + "&action=gv_xem_bao_caoTT";
   $.getJSON(url, function(data) {
