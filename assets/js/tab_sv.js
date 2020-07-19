@@ -205,7 +205,7 @@ $('.modelDetails').ready(function() {
 function infoCompanySV_() {
   if (getCoo56yhjkk() == undefined)
     return;
-  var url = APIurl + getCoo56yhjkk() + "&action=stprofile";
+  var url = APIurl + getCoo56yhjkk() + "&action=studentGetInfoCompany";
   var heading = '<div class="row-12"><div class="row-center"> <h2>CẬP NHẬT THÔNG TIN CÔNG TY THỰC TẬP DÀNH CHO SINH VIÊN</h2> </div> </div>';
   var form = '<form id="form_update_cp" class="form-view col-2" onsubmit="return false;">';
   var row_ = '<div class="row-6">',
@@ -215,16 +215,16 @@ function infoCompanySV_() {
     s_input_f = '</span> <input class="input input_f"';
   $.getJSON(url, function(data) {
     var strText = heading + '<div class="row-12">' + form;
-    $.each(data, function(key, val) {
-      strText += row_ + finput + lbel + 'Tên Công Ty:' + s_input_f + ' type="text" name="company" value="" placeholder="Nhập tên công ty" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'Website:' + s_input_f + ' type="text" name="website" value="" placeholder="Nhập website" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'Ngày bắt đầu :' + s_input_f + ' type="text" name="work_start_date" value="" placeholder="Nhập ngày bắt đầu" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'Ngày kết thúc :' + s_input_f + ' type="text" name="work_end_date" value="" placeholder="Nhập ngày kết thúc" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'SĐT người quản lý:' + s_input_f + ' type="text" name="manager_phonenumber" value="" placeholder="Nhập số điện thoại" required=""> <span class="focus-input"></span> </div></div>';
-      strText += row_ + finput + lbel + 'Họ và tên người quản lý:' + s_input_f + ' type="text" name="manager_fullname"   value="" placeholder="Nhập họ và tên" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'Email người quản lý:' + s_input_f + ' type="text" name="manager_email" value="" placeholder="Nhập Email" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'Chức vụ đang làm:' + s_input_f + ' type="text" name="st_role" value="" placeholder="Nhập chức vụ đang làm" required=""> <span class="focus-input"></span> </div>';
-      strText += finput + lbel + 'Vị trí công việc:' + s_input_f + ' type="text" name="st_job_position" value="" placeholder="Nhập vị trí công việc" required=""> <span class="focus-input"></span> </div></div>';
+    $.each(data.lookup, function(key, val) {
+      strText += row_ + finput + lbel + 'Tên Công Ty:' + s_input_f + ' type="text" name="company" value="'+val.sGetCompanyName+'" placeholder="Nhập tên công ty" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'Website:' + s_input_f + ' type="text" name="website" value="'+val.sGetWebsite+'" placeholder="Nhập website" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'Ngày bắt đầu :' + s_input_f + ' type="text" name="work_start_date" value="'+val.sGetWorkStartDate+'" placeholder="Nhập ngày bắt đầu" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'Ngày kết thúc :' + s_input_f + ' type="text" name="work_end_date" value="'+val.sGetWorkEndDate+'" placeholder="Nhập ngày kết thúc" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'SĐT người quản lý:' + s_input_f + ' type="text" name="manager_phonenumber" value="'+val.sGetManagerPhone+'" placeholder="Nhập số điện thoại" required=""> <span class="focus-input"></span> </div></div>';
+      strText += row_ + finput + lbel + 'Họ và tên người quản lý:' + s_input_f + ' type="text" name="manager_fullname"   value="'+val.sGetManagerName+'" placeholder="Nhập họ và tên" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'Email người quản lý:' + s_input_f + ' type="text" name="manager_email" value="'+val.sGetManagerEmail+'" placeholder="Nhập Email" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'Chức vụ đang làm:' + s_input_f + ' type="text" name="st_role" value="'+val.sGetManagerPosition+'" placeholder="Nhập chức vụ đang làm" required=""> <span class="focus-input"></span> </div>';
+      strText += finput + lbel + 'Vị trí công việc thực tập:' + s_input_f + ' type="text" name="st_job_position" value="'+val.sGetStudentPosition+'" placeholder="Nhập vị trí công việc" required=""> <span class="focus-input"></span> </div></div>';
       strText += '<div class="row-12 width100" id="resultUpdateCPN"></div>'
       strText += '<div class="row-12 width100">' + fin_Abs + '<input id="submitChangeINFC" type="submit" class="inputButton btn-center" value="ĐÔNG Ý THAY ĐỖI"></div> </div> </div> </form></div>';
 
