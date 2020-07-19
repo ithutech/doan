@@ -107,7 +107,7 @@ function viewrp(mssv) {
 
 function viewrpTT(mssv) {
   $(".modelDetailsTT").css("display", "block");
-  $("#gv_xem_bao_caoTT").html(jsLD);
+  $("#gv_xem_bao_cao").html(jsLD);
   var url = APIurl +"&mssv=" + mssv + "&action=gv_xem_bao_caoTT";
   $.getJSON(url, function(data) {
     var mdContent = "",
@@ -120,7 +120,7 @@ function viewrpTT(mssv) {
       }
     });
     var editor = tui.Editor.factory({
-      el: document.querySelector('#gv_xem_bao_caoTT'),
+      el: document.querySelector('#gv_xem_bao_cao'),
       viewer: true,
       height: '500px',
       initialValue: mdContent
