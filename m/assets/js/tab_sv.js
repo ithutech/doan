@@ -237,7 +237,7 @@ $("#submitREPORT").click(function(event) {
   if (content.length == "" || content.length <= 20)
     return alert('Bài báo cáo quá ngắn hoặc bạn chưa nhập nội dung');
   document.querySelector(".form-input-absoluted .loading-change-report").classList.remove("is-hidden");
-  var url = APIurl + getCoo56yhjkk() + "&content_rp=" + encodeURIComponent(content) + "&action=stReport";
+  var url = APIurl + getCoo56yhjkk() + "&content_rp=" + encodeURIComponent(content) + "&action=stReportTT";
   var strResult;
   $.getJSON(url, function(data) {
     $.each(data.output, function(key, val) {
