@@ -26,6 +26,10 @@ $('ul#menu a').click(function(e) {
   } else if (this.id === 'studentReport') {
     $('.studentReport').removeClass('noshow');
     $('.mb-content').children().not('.studentReport').addClass('noshow');
+  }
+    else if (this.id === 'studentReportTT') {
+    $('.studentReportTT').removeClass('noshow');
+    $('.mb-content').children().not('.studentReportTT').addClass('noshow');
 
   } else if (this.id === 'studentViewRp') {
     $('.studentViewRp').removeClass('noshow');
