@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Git Login App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="upload.js"></script>
+	<style>#progress-wrp {
+    border: 1px solid #0099CC;
+    padding: 1px;
+    position: relative;
+    height: 30px;
+    border-radius: 3px;
+    margin: 10px;
+    text-align: left;
+    background: #fff;
+    box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+  }
+  
+  #progress-wrp .progress-bar {
+    height: 100%;
+    border-radius: 3px;
+    background-color: #f39ac7;
+    width: 0;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+  }
+  
+  #progress-wrp .status {
+    top: 3px;
+    left: 50%;
+    position: absolute;
+    display: inline-block;
+    color: #000000;
+  }</style>
+	<script>
+	var link = document.createElement('meta');
+	link.setAttribute('title', 'og:url');
+	function GetFileSizeNameAndType()
+        {
+        var fi = document.getElementById('files'); // GET THE FILE INPUT AS VARIABLE.
+
+        var totalFileSize = 0;
+
+        if (fi.files.length > 0)
+        {
+            for (var i = 0; i <= fi.files.length - 1; i++)
+            {
+                var fsize = fi.files.item(i).size;
+                totalFileSize = totalFileSize + fsize;
+				document.getElementById('files').name = fi.files.item(i).name;
+				document.getElementById('files').title = fi.files.item(i).name;
+                document.getElementById('fp').innerHTML = document.getElementById('fp').innerHTML
+                + Math.round((fsize / 1024))
+                +
+                '</b> KB and File Type is <b>' + fi.files.item(i).type + "</b>.";
+            }
+        }
+    }
+
+	
+	</script>
+</head>
+<body>
+   <div>
+     <input id="files" type="file" title="" name="files[]" multiple onchange="GetFileSizeNameAndType()"/>
+     <button id="upload">Upload</button>
+     <div id="progress-wrp">
+        <div class="progress-bar"></div>
+        <div class="status">0%</div>
+		 <div id="fp"></div>
+    </div>
+   </div> 
+   <div id="result">
+       
+   </div>
+</body>
+</html>
